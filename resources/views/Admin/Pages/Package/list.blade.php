@@ -136,7 +136,8 @@
                     </td> --}}
 <td>
 
-<a href="{{route('package.delete',$package->id)}}"class="btn btn-warning">Trash</a>
+<a href="{{route('package.delete',$package->id)}}"class="btn btn-danger">Trash</a>
+<a href="{{route('package.edit',$package->id)}}"class="btn btn-warning">Edit</a>
 
 </td>
         @endforeach

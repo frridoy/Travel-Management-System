@@ -116,4 +116,33 @@ class PackageController extends Controller
         notify()->error('Pacakge Deleted Succesfully');
         return redirect()->back();
     }
+
+    public function edit ($id)
+    {
+        // $package=Package::find($id);
+        $package = Package::find($id);
+        return view('Admin.Pages.Package.edit',compact('package'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $package=Package::find($id);
+        if($package)
+        {
+            $package->update([
+                'name' => $request->name,
+                'pickupdate' => $request->pickupdate,
+                'duration' => $request->duration,
+                'returndate' => $request->returndate,
+                'totalseat' => $request->totalseat,
+                'price' => $request->price,
+                'spot' => $request->spot,
+                'description' => $request->description,
+                // 'image' => $fileName,
+
+            ]);
+            notify()->success('Package Info Updated Successfully');
+            return redirect()->route('package.list');
+        }
+    }
 }

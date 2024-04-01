@@ -16,10 +16,11 @@ class TransportController extends Controller
     public function store(Request $request)
     {
 
-        $validation=Validator::make($request->all(),[
+        $validation=Validator::make($request->all(),
+        [
             'name'=>'required',
             'type'=>'required',
-            'price'=>'required|numeric|gt:1',
+            'price'=>'required|numeric|gt:0',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'number'=>'required|regex:/^01[3-9][0-9]{8}$/|numeric',
 

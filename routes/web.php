@@ -5,6 +5,7 @@ use App\Http\Controllers\ConsumerController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\HotelController;
 use App\Http\Controllers\Backend\PackageController;
+use App\Http\Controllers\Backend\TestController;
 use App\Http\Controllers\Backend\TransportController;
 use App\Http\Controllers\MobileController;
 use Illuminate\Support\Facades\Route;
@@ -94,6 +95,8 @@ Route::get('/package/delete/{id}',[PackageController::class,'delete'])->name('pa
 Route::get('/package/trash',[PackageController::class,'trash'])->name('package.trash');
 Route::get('/package/restore/{id}',[PackageController::class,'restore'])->name('package.restore');
 Route::get('/package/force-delete/{id}',[PackageController::class,'forceDelete'])->name('package.forceDelete');
+Route::get('/package/edit/{id}',[PackageController::class,'edit'])->name('package.edit');
+Route::post('/package/update/{id}',[PackageController::class,'update'])->name('package.update');
 
 
 
@@ -103,3 +106,10 @@ Route::get('/package/force-delete/{id}',[PackageController::class,'forceDelete']
 Route::get('/transport/create',[TransportController::class, 'create'])->name('transport.create');
 Route::post('/transport/store',[TransportController::class, 'store'])->name('transport.store');
 Route::get('/transport/list',[TransportController::class, 'list'])->name('transport.list');
+
+
+//testing
+
+Route::get('/customer/dekhabonaaaaaaaaaaaaaaa',[TestController::class, 'test'])->name('customer.test');
+
+
