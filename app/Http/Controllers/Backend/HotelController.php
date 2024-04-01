@@ -41,7 +41,7 @@ class HotelController extends Controller
       ]);
     //   dd($request->all());
       notify()->success('Hotel Created Succesfully');
-      return redirect()->route('hotel.list');
+      return redirect()->route('hotel.create');
 
     }
     public function list()
@@ -49,4 +49,47 @@ class HotelController extends Controller
         $hotels=Hotel::all();
         return view('Admin.Pages.Hotel.list',compact('hotels'));
     }
+
+
+    public function delete($id)
+    {
+        $hotel=Hotel::find($id);
+
+            if($hotel)
+            {
+                $hotel->delete();
+            }
+            notify()->error('Hotel Trashed Succesfully');
+            return redirect()->back();
+
+    }
+    public function trash()
+    {
+        $hotels=Hotel::onlyTrashed()->get();
+        return view('Admin.Pages.Hotel.trash', compact('hotels'));
+    }
+
+    public function restore($id)
+    {
+        $hotel=Hotel::withTrashed()->find($id);
+        if($hotel)
+        {
+            $hotel->restore();
+        }
+        notify()->success('Hotel Restored Succesfully');
+        return redirect()->back();
+    }
+
+    public function forceDelete($id)
+    {
+        $hotel=Hotel::withTrashed()->find($id);
+        if($hotel)
+        {
+            $hotel->forceDelete();
+        }
+        notify()->error('Hotel Deleted Succesfully');
+        return redirect()->back();
+
+    }
+
 }

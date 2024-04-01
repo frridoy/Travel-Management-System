@@ -1,21 +1,12 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\DemoController;
-use App\Http\Controllers\Backend\Productcontroller;
 use App\Http\Controllers\ConsumerController;
-use App\Http\Controllers\GroupController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\MemeberController;
-use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\HotelController;
 use App\Http\Controllers\Backend\PackageController;
-use App\Http\Controllers\Frontent\ServiceController;
-use App\Http\Controllers\Frontent\WebsiteController;
-use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\Backend\TransportController;
 use App\Http\Controllers\MobileController;
-use App\Models\Consumer;
 use Illuminate\Support\Facades\Route;
 
 //dashboard
@@ -83,13 +74,32 @@ Route::get('/mobile/list', [MobileController::class, 'list'])->name('mobile.list
 
 //Hotel
 
+
 Route::get('/hotel/create',[HotelController::class,'create'])->name('hotel.create');
 Route::post('/hotel/store',[HotelController::class,'store'])->name('hotel.store');
 Route::get('/hotel/list',[HotelController::class,'list'])->name('hotel.list');
+Route::get('/hotel/delete/{id}',[HotelController::class,'delete'])->name('hotel.delete');
+Route::get('/hotel/trash',[HotelController::class,'trash'])->name('hotel.trash');
+Route::get('/hotel/restore/{ttt_id}',[HotelController::class,'restore'])->name('hotel.restore');
+Route::get('/hotel/force-delete/{id}',[HotelController::class,'forceDelete'])->name('hotel.forceDelete');
 
 
 //Package
 
+
 Route::get('/package/create',[PackageController::class,'create'])->name('package.create');
 Route::post('/package/store',[PackageController::class,'store'])->name('package.store');
 Route::get('/package/list',[PackageController::class,'list'])->name('package.list');
+Route::get('/package/delete/{id}',[PackageController::class,'delete'])->name('package.delete');
+Route::get('/package/trash',[PackageController::class,'trash'])->name('package.trash');
+Route::get('/package/restore/{id}',[PackageController::class,'restore'])->name('package.restore');
+Route::get('/package/force-delete/{id}',[PackageController::class,'forceDelete'])->name('package.forceDelete');
+
+
+
+//Transport
+
+
+Route::get('/transport/create',[TransportController::class, 'create'])->name('transport.create');
+Route::post('/transport/store',[TransportController::class, 'store'])->name('transport.store');
+Route::get('/transport/list',[TransportController::class, 'list'])->name('transport.list');

@@ -21,10 +21,16 @@ return new class extends Migration
             $table->string('price');
             $table->string('spot');
             $table->text('description')->nullable();
-            // $table->string('image')->nullable();
+            $table->string('image')->nullable();
             $table->unsignedBigInteger('hotel_id');
-            $table->foreign('hotel_id')->references('id')->on('hotels');
+            $table->foreign('hotel_id')->references('id')->on('hotels')->onDelete('cascade');
+            $table->BigInteger('transport_id')->unsigned();
+            $table->foreign('transport_id')->references('id')->on('transports')->onDelete('cascade');
+            // $table->foreignId('hotel_id')->constrained('hotels')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreignId('transport_id')->constrained('transport')->onDelete('cascade')->onUpdate('cascade');
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel List</title>
+    <title>Hotel Trash List</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -24,10 +24,8 @@
 </head>
 <body>
 
-    <a class="btn btn-danger" href="{{route('hotel.trash')}}"> Trash List</a>
 <div class="container mt-5">
-    <h2 class="text-center mb-4">Hotel List</h2>
-
+    <h2 class="text-center mb-4">Hotel  Trash List</h2>
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
             <thead class="thead-dark">
@@ -51,7 +49,8 @@
                     <td>BDT {{ $hotel->price }}</td>
                     <td>{{ $hotel->number }}</td>
                     <td>
-                        <a href="{{route('hotel.delete', $hotel->id)}}" class="btn btn-danger">Trash</a>
+                        <a href="{{route('hotel.restore',$hotel->id)}}" class="btn btn-success">Restore</a>
+                        <a href="{{route('hotel.forceDelete',$hotel->id)}}" class="btn btn-danger">Delete</a>
 
                     </td>
                 </tr>
