@@ -108,6 +108,10 @@ Route::post('/package/update/{id}',[PackageController::class,'update'])->name('p
 Route::get('/transport/create',[TransportController::class, 'create'])->name('transport.create');
 Route::post('/transport/store',[TransportController::class, 'store'])->name('transport.store');
 Route::get('/transport/list',[TransportController::class, 'list'])->name('transport.list');
+Route::get('/transport/delete/{id}',[TransportController::class, 'delete'])->name('transport.delete');
+Route::get('/transport/trash',[TransportController::class, 'trash'])->name('transport.trash');
+Route::get('/transport/restore/{id}',[TransportController::class, 'restore'])->name('transport.restore');
+Route::get('/transport/force-delete/{id}',[TransportController::class, 'forceDelete'])->name('transport.forceDelete');
 
 
 //testing

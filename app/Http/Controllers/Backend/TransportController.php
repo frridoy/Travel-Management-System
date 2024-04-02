@@ -54,4 +54,52 @@ class TransportController extends Controller
         return view('Admin.Pages.Transport.list', compact('transports'));
     }
 
+    public function delete ($id)
+    {
+        $transport=Transport::find($id);
+        if ( $transport)
+        {
+            $transport->delete();
+        }
+        notify()->success('Transport Info Trashed Succesfully');
+        return redirect()->back();
+
+    }
+
+    public function trash()
+    {
+        $transports=Transport::onlyTrashed()->get();
+        return view('Admin.Pages.Transport.trash', compact('transports'));
+    }
+
+    public function restore($id)
+    {
+        $transport=Transport::withTrashed()->find($id);
+        {
+            if($transport)
+            {
+                $transport->restore();
+            }
+            notify()->success('Transport Info Restored Succesfully');
+            return redirect()->back();
+        }
+    }
+
+    public function forceDelete($id)
+    {
+        $transport=Transport::withTrashed()->find($id);
+        {
+            if($transport)
+            {
+                $transport->forceDelete();
+            }
+            notify()->success('Transport Info Permanent Deleted Succesfully');
+            return redirect()->back();
+        }
+    }
+
+
+
 }
+
+

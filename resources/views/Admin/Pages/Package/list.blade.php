@@ -80,7 +80,7 @@
     <title>Package List</title>
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+    {{-- <style>
 
         .container {
             max-width: 800px;
@@ -92,7 +92,7 @@
             text-align: center;
             vertical-align: middle;
         }
-    </style>
+    </style> --}}
 </head>
 <body>
 

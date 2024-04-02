@@ -83,6 +83,7 @@
             <ul class="sidebar-menu list-unstyled collapse" id="transportDropdown">
                 <li class="sidebar-list-item"><a class="sidebar-link text-muted create" href="{{route('transport.create')}}">Transport Create</a></li>
                 <li class="sidebar-list-item"><a class="sidebar-link text-muted list" href="{{route('transport.list')}}">Transport List</a></li>
+                <li class="sidebar-list-item"><a class="sidebar-link text-muted list" href="{{route('transport.trash')}}">Transport- Trash List</a></li>
             </ul>
         </li>
 
