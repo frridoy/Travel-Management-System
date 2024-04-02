@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel List</title>
+    <title>Transport List</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     {{-- <style>
@@ -25,59 +25,66 @@
 </head>
 <body>
 
-    <a class="btn btn-danger" href="{{route('hotel.trash')}}"> Trash List</a>
 <div class="container mt-5">
-    <h2 class="text-center mb-4">Hotel List</h2>
+    <h2 class="text-center mb-4">Transport List</h2>
 
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Room Type</th>
-                    <th>Address</th>
+                    <th>SI</th>
+                    <th>Code</th>
+                    <th> Hotel Name</th>
+                    <th>Type</th>
                     <th>Price (BDT)</th>
-                    <th>Contact Number</th>
+                    <th>Contact</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($hotels as $hotel)
+                @php
+                $start = $hotels->currentPage() * $hotels->perPage() - $hotels->perPage() + 1;
+            @endphp
+
+                @foreach($hotels as $key => $hotel)
                 <tr>
-                    <td>{{ $hotel->id }}</td>
+                    {{-- <th scope="row">{{ $key + 1 }}</th> --}}
+                    <th scope="row">{{ $start + $key }}</th>
+                    <td>HT-{{ $hotel->id }}</td>
                     <td>{{ $hotel->name }}</td>
                     <td>{{ $hotel->type }}</td>
-                    <td>{{ $hotel->address }}</td>
+                    {{-- <td>{{ $transports->image }}</td> --}}
                     <td>BDT {{ $hotel->price }}</td>
                     <td>{{ $hotel->number }}</td>
-                    {{-- <td>
-                        <a href="{{route('hotel.delete', $hotel->id)}}" class="btn btn-warning"><i class="fas fa-trash"></i> </a>
-                        <a href="{{route('hotel.edit', $hotel->id)}}" class="btn btn-info"><i class="fas fa-edit"></i> </a>
 
-                    </td> --}}
                     <td>
                         <a href="{{ route('hotel.delete', $hotel->id) }}" class="btn btn-warning">
                             <span style="font-size: 0.9rem;"><i class="fas fa-trash"></i></span>
 
                         </a>
-                        <a href="{{ route('hotel.edit', $hotel->id) }}" class="btn btn-info">
-
+                        <a href="{{ route('hotel.edit', $hotel->id) }}" class="btn btn-warning">
                             <span style="font-size: 0.9rem;"><i class="fas fa-edit"></i></span>
+
                         </a>
                     </td>
 
                 </tr>
                 @endforeach
             </tbody>
-        </table>
+    </table>
+
+
+        {{ $hotels->links() }}
+
+
     </div>
 </div>
 
-<!-- Bootstrap JS and dependencies -->
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
 @endsection
+

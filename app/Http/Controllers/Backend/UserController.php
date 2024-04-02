@@ -26,6 +26,8 @@ class UserController extends Controller
             return redirect()->back()->withInput();
         }
 
+
+
         $credentials = $request->except('_token');
         $login = auth()->attempt($credentials);
         if ($login)

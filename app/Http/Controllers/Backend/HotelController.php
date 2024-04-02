@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Hotel;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Validator;
 
 class HotelController extends Controller
@@ -46,7 +47,9 @@ class HotelController extends Controller
     }
     public function list()
     {
-        $hotels=Hotel::all();
+
+        $hotels=Hotel::paginate(2);
+        // dd($hotels);
         return view('Admin.Pages.Hotel.list',compact('hotels'));
     }
 

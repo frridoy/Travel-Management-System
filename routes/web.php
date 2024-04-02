@@ -12,11 +12,14 @@ use Illuminate\Support\Facades\Route;
 
 //log in
 
-Route::get("/login", [UserController::class, 'login'])->name('admin.login');
-Route::post("/login/store", [UserController::class, 'loginPost'])->name('admin.login.post');
+Route::get('/login', [UserController::class, 'login'])->name('admin.login');
+Route::post('/login/store', [UserController::class, 'loginPost'])->name('admin.login.post');
 
 
 Route::group(['middleware' => 'auth'], function () {
+
+
+//below all routes if I want to visit those url I have to login first
 
 //dashboard
 
@@ -69,7 +72,14 @@ Route::get('/transport/force-delete/{id}',[TransportController::class, 'forceDel
 Route::get('/transport/edit/{id}',[TransportController::class, 'edit'])->name('transport.edit');
 Route::post('/transport/update/{id}',[TransportController::class, 'update'])->name('transport.update');
 
+
+
+
+
 });
+
+
+
 
 
 
