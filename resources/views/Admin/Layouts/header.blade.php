@@ -123,7 +123,7 @@
                         <h6 class="text-uppercase font-weight-bold">Md. Shahriar Kabir</h6><small>Web Developer</small>
                     </div>
                     <div class="dropdown-divider"></div><a class="dropdown-item" href="#">Profile<a>
-                    <div class="dropdown-divider"></div><a class="dropdown-item" href="login.html">Logout</a>
+                    <div class="dropdown-divider"></div><a class="dropdown-item" href="{{route('admin.logout')}}">Logout</a>
                 </div>
             </li>
         </ul>

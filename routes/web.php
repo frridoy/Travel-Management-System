@@ -5,14 +5,26 @@ use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\HotelController;
 use App\Http\Controllers\Backend\PackageController;
 use App\Http\Controllers\Backend\TransportController;
+use App\Http\Controllers\Backend\UserController;
 use Illuminate\Support\Facades\Route;
 
 
 
+//log in
+
+Route::get("/login", [UserController::class, 'login'])->name('admin.login');
+Route::post("/login/store", [UserController::class, 'loginPost'])->name('admin.login.post');
+
+
+Route::group(['middleware' => 'auth'], function () {
 
 //dashboard
 
-Route::get('/',[DashboardController::class,'dashboard']);
+Route::get('/',[DashboardController::class,'dashboard'])->name('dashboard');
+
+
+//logout
+Route::get("/logout", [UserController::class, 'logout'])->name('admin.logout');
 
 
 //Hotel
@@ -57,7 +69,7 @@ Route::get('/transport/force-delete/{id}',[TransportController::class, 'forceDel
 Route::get('/transport/edit/{id}',[TransportController::class, 'edit'])->name('transport.edit');
 Route::post('/transport/update/{id}',[TransportController::class, 'update'])->name('transport.update');
 
-
+});
 
 
 

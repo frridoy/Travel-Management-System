@@ -87,7 +87,7 @@
             </ul>
         </li>
 
-        <li class="sidebar-list-item">
+        {{-- <li class="sidebar-list-item">
             <a class="sidebar-link text-muted" href="#" data-bs-target="#transportDropdown" role="button" aria-expanded="false" data-bs-toggle="collapse">
                 <svg class="svg-icon svg-icon-md me-3">
                     <use xlink:href="icons/orion-svg-sprite.71e9f5f2.svg#design-1"> </use>
@@ -98,7 +98,7 @@
                 <li class="sidebar-list-item"><a class="sidebar-link text-muted create" href="{{route('customer.test')}}">User Test</a></li>
 
             </ul>
-        </li>
+        </li> --}}
 
     </ul>
 
