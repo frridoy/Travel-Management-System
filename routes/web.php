@@ -112,6 +112,13 @@ Route::get('/transport/delete/{id}',[TransportController::class, 'delete'])->nam
 Route::get('/transport/trash',[TransportController::class, 'trash'])->name('transport.trash');
 Route::get('/transport/restore/{id}',[TransportController::class, 'restore'])->name('transport.restore');
 Route::get('/transport/force-delete/{id}',[TransportController::class, 'forceDelete'])->name('transport.forceDelete');
+Route::get('/transport/edit/{id}',[TransportController::class, 'edit'])->name('transport.edit');
+Route::post('/transport/update/{id}',[TransportController::class, 'update'])->name('transport.update');
+
+
+
+
+
 
 
 //testing

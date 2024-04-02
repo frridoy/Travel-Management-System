@@ -98,7 +98,29 @@ class TransportController extends Controller
         }
     }
 
+    public function edit ($id)
+    {
+        $transport=Transport::find($id);
+        return view('Admin.Pages.Transport.edit', compact('transport'));
+    }
 
+ public function update(Request $request, $id)
+ {
+    $transport=Transport::find($id);
+    if($transport)
+    {
+        $transport->update([
+            'name'=>$request->name,
+            'type'=>$request->type,
+            'price'=>$request->price,
+            // 'image'=>$request->image,
+            'number'=>$request->number,
+        ]);
+    }
+    notify()->success('Transport Info Updated Succesfully');
+    return redirect()->route('transport.list');
+
+ }
 
 }
 
