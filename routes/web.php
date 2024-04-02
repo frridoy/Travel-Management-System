@@ -83,6 +83,8 @@ Route::get('/hotel/delete/{id}',[HotelController::class,'delete'])->name('hotel.
 Route::get('/hotel/trash',[HotelController::class,'trash'])->name('hotel.trash');
 Route::get('/hotel/restore/{ttt_id}',[HotelController::class,'restore'])->name('hotel.restore');
 Route::get('/hotel/force-delete/{id}',[HotelController::class,'forceDelete'])->name('hotel.forceDelete');
+Route::get('/hotel/edit/{id}',[HotelController::class,'edit'])->name('hotel.edit');
+Route::post('/hotel/update/{id}',[HotelController::class,'update'])->name('hotel.update');
 
 
 //Package

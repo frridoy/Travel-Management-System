@@ -40,7 +40,7 @@ class HotelController extends Controller
 
       ]);
     //   dd($request->all());
-      notify()->success('Hotel Created Succesfully');
+      notify()->success('Hotel info Created Succesfully');
       return redirect()->route('hotel.create');
 
     }
@@ -59,7 +59,7 @@ class HotelController extends Controller
             {
                 $hotel->delete();
             }
-            notify()->error('Hotel Trashed Succesfully');
+            notify()->error('Hotel info Trashed Succesfully');
             return redirect()->back();
 
     }
@@ -76,7 +76,7 @@ class HotelController extends Controller
         {
             $hotel->restore();
         }
-        notify()->success('Hotel Restored Succesfully');
+        notify()->success('Hotel info Restored Succesfully');
         return redirect()->back();
     }
 
@@ -87,9 +87,32 @@ class HotelController extends Controller
         {
             $hotel->forceDelete();
         }
-        notify()->error('Hotel Deleted Succesfully');
+        notify()->error('Hotel info Deleted Succesfully');
         return redirect()->back();
 
+    }
+
+    public function edit($id)
+    {
+        $hotel=Hotel::find($id);
+        return view('Admin.Pages.Hotel.edit',compact('hotel'));
+    }
+
+    public function update(Request $request, $id)
+    {
+$hotel=Hotel::find($id);
+if ($hotel)
+{
+    $hotel->update([
+        'name'=>$request->name,
+        'type'=>$request->type,
+        'address'=>$request->address,
+        'price'=>$request->price,
+        'number'=>$request->number,
+    ]);
+}
+notify()->success('Hotel info Updated Succesfully');
+return redirect()->route('hotel.list');
     }
 
 }

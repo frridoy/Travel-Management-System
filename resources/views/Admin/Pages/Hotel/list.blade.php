@@ -20,6 +20,7 @@
             text-align: center;
             vertical-align: middle;
         }
+
     </style>
 </head>
 <body>
@@ -50,10 +51,22 @@
                     <td>{{ $hotel->address }}</td>
                     <td>BDT {{ $hotel->price }}</td>
                     <td>{{ $hotel->number }}</td>
-                    <td>
-                        <a href="{{route('hotel.delete', $hotel->id)}}" class="btn btn-danger">Trash</a>
+                    {{-- <td>
+                        <a href="{{route('hotel.delete', $hotel->id)}}" class="btn btn-warning"><i class="fas fa-trash"></i> </a>
+                        <a href="{{route('hotel.edit', $hotel->id)}}" class="btn btn-info"><i class="fas fa-edit"></i> </a>
 
+                    </td> --}}
+                    <td>
+                        <a href="{{ route('hotel.delete', $hotel->id) }}" class="btn btn-warning">
+                            <span style="font-size: 0.9rem;"><i class="fas fa-trash"></i></span>
+
+                        </a>
+                        <a href="{{ route('hotel.edit', $hotel->id) }}" class="btn btn-info">
+
+                            <span style="font-size: 0.9rem;"><i class="fas fa-edit"></i></span>
+                        </a>
                     </td>
+
                 </tr>
                 @endforeach
             </tbody>

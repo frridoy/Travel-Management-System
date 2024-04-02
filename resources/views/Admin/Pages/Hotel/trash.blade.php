@@ -49,8 +49,8 @@
                     <td>BDT {{ $hotel->price }}</td>
                     <td>{{ $hotel->number }}</td>
                     <td>
-                        <a href="{{route('hotel.restore',$hotel->id)}}" class="btn btn-success">Restore</a>
-                        <a href="{{route('hotel.forceDelete',$hotel->id)}}" class="btn btn-danger">Delete</a>
+                        <a href="{{route('hotel.restore',$hotel->id)}}" class="btn btn-success"> <span><i class="fas fa-undo"></i></span></a>
+                        <a href="{{route('hotel.forceDelete',$hotel->id)}}" class="btn btn-danger"> <span><i class="fas fa-trash-alt"></i></span> </a>
 
                     </td>
                 </tr>
