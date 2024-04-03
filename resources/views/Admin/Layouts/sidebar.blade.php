@@ -81,24 +81,25 @@
                 <span class="sidebar-link-title">Transport </span>
             </a>
             <ul class="sidebar-menu list-unstyled collapse" id="transportDropdown">
-                <li class="sidebar-list-item"><a class="sidebar-link text-muted create" href="{{route('transport.create')}}">Transport Create</a></li>
-                <li class="sidebar-list-item"><a class="sidebar-link text-muted list" href="{{route('transport.list')}}">Transport List</a></li>
+                <li class="sidebar-list-item"><a class="sidebar-link text-muted create" href="{{route('transport.create')}}">Transport- Create</a></li>
+                <li class="sidebar-list-item"><a class="sidebar-link text-muted list" href="{{route('transport.list')}}">Transport- List</a></li>
                 <li class="sidebar-list-item"><a class="sidebar-link text-muted list" href="{{route('transport.trash')}}">Transport- Trash List</a></li>
             </ul>
         </li>
 
-        {{-- <li class="sidebar-list-item">
-            <a class="sidebar-link text-muted" href="#" data-bs-target="#transportDropdown" role="button" aria-expanded="false" data-bs-toggle="collapse">
+        <li class="sidebar-list-item">
+            <a class="sidebar-link text-muted" href="#" data-bs-target="#packageDropdown" role="button" aria-expanded="false" data-bs-toggle="collapse">
                 <svg class="svg-icon svg-icon-md me-3">
                     <use xlink:href="icons/orion-svg-sprite.71e9f5f2.svg#design-1"> </use>
                 </svg>
-                <span class="sidebar-link-title">Testing </span>
+                <span class="sidebar-link-title">Destination </span>
             </a>
-            <ul class="sidebar-menu list-unstyled collapse" id="transportDropdown">
-                <li class="sidebar-list-item"><a class="sidebar-link text-muted create" href="{{route('customer.test')}}">User Test</a></li>
-
+            <ul class="sidebar-menu list-unstyled collapse" id="packageDropdown">
+                <li class="sidebar-list-item"><a class="sidebar-link text-muted create" href="{{route('destination.create')}}">Destination- Create</a></li>
+                <li class="sidebar-list-item"><a class="sidebar-link text-muted list" href="{{route('destination.list')}}">Destination- List</a></li>
+                <li class="sidebar-list-item"><a class="sidebar-link text-muted list" href="">Destination- Trash List</a></li>
             </ul>
-        </li> --}}
+        </li>
 
     </ul>
 

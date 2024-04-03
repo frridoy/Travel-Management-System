@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\DestinationController;
 use App\Http\Controllers\Backend\HotelController;
 use App\Http\Controllers\Backend\PackageController;
 use App\Http\Controllers\Backend\TransportController;
@@ -73,10 +74,18 @@ Route::get('/transport/edit/{id}',[TransportController::class, 'edit'])->name('t
 Route::post('/transport/update/{id}',[TransportController::class, 'update'])->name('transport.update');
 
 
+//location
+
+Route::get('/destination/create',[DestinationController::class,'create'])->name('destination.create');
+Route::post('/destination/store',[DestinationController::class,'store'])->name('destination.store');
+Route::get('/destination/list',[DestinationController::class,'list'])->name('destination.list');
+
+
 
 
 
 });
+
 
 
 
