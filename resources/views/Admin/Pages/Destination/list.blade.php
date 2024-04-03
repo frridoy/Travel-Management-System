@@ -39,10 +39,14 @@
                 </tr>
             </thead>
             <tbody>
+                @php
+                    $start = $destinations->currentPage() *  $destinations->perPage() -  $destinations->perPage() + 1
+                @endphp
+
 
                 @foreach($destinations as $key=> $destination)
                 <tr>
-                    <td>{{ $key + 1 }}</td>
+                    <td>{{ $key + $start}}</td>
                     <td>{{ $destination->name }}</td>
                     <td>{{ $destination->distance }} KM</td>
 
@@ -61,6 +65,7 @@
                 @endforeach
             </tbody>
         </table>
+        {{$destinations->links()}}
     </div>
 </div>
 

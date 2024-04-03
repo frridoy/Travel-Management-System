@@ -35,7 +35,10 @@ class DestinationController extends Controller
 
     public function list ()
     {
-        $destinations=Destination::all();
+
+        //pagination
+        $destinations=Destination::paginate(4);
+
         return view('Admin.Pages.Destination.list', compact('destinations'));
     }
 }
