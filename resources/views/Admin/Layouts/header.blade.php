@@ -21,13 +21,13 @@
                     <h6 class="dropdown-header text-uppercase fw-normal">Users</h6><a class="dropdown-item py-1"
                         href="pages-profile.html"> <img class="avatar avatar-xs p-1 me-2"
                             src="https://d19m59y37dris4.cloudfront.net/bubbly/1-3-2/img/avatar-0.jpg"
-                            alt="Jason Doe"><span>Jason Doe</span></a><a class="dropdown-item py-1"
+                            alt="Md. Shahriar Kabir"><span>Md. Shahriar Kabir</span></a><a class="dropdown-item py-1"
                         href="pages-profile.html"> <img class="avatar avatar-xs p-1 me-2"
                             src="https://d19m59y37dris4.cloudfront.net/bubbly/1-3-2/img/avatar-1.jpg"
-                            alt="Frank Williams"><span>Frank Williams</span></a><a class="dropdown-item py-1"
+                            alt="Md. Shahriar Kabir"><span>Md. Shahriar Kabir</span></a><a class="dropdown-item py-1"
                         href="pages-profile.html"> <img class="avatar avatar-xs p-1 me-2"
                             src="https://d19m59y37dris4.cloudfront.net/bubbly/1-3-2/img/avatar-2.jpg"
-                            alt="Ashley Wood"><span>Ashley Wood</span></a>
+                            alt="Md. Shahriar Kabir"><span>Md. Shahriar Kabir</span></a>
                     <div class="dropdown-divider"></div>
                     <h6 class="dropdown-header text-uppercase fw-normal">Filters</h6><a class="dropdown-item py-1"
                         href="#!"> <span class="badge me-2 badge-success-light">Posts</span><span
@@ -88,25 +88,25 @@
                     aria-labelledby="messages"><a class="dropdown-item d-flex align-items-center p-3" href="#"> <img
                             class="avatar avatar-sm p-1 me-2"
                             src="https://d19m59y37dris4.cloudfront.net/bubbly/1-3-2/img/avatar-0.jpg"
-                            alt="Jason Doe">
+                            alt="Md. Shahriar Kabir">
                         <div class="pt-1">
-                            <h6 class="fw-bold mb-0">Jason Doe</h6><span class="text-muted text-sm">Sent you a
+                            <h6 class="fw-bold mb-0">Md. Shahriar Kabir</h6><span class="text-muted text-sm">Sent you a
                                 message</span>
                         </div>
                     </a><a class="dropdown-item d-flex align-items-center p-3" href="#"> <img
                             class="avatar avatar-sm p-1 me-2"
                             src="https://d19m59y37dris4.cloudfront.net/bubbly/1-3-2/img/avatar-1.jpg"
-                            alt="Frank Williams">
+                            alt="Md. Shahriar Kabir">
                         <div class="pt-1">
-                            <h6 class="fw-bold mb-0">Frank Williams</h6><span class="text-muted text-sm">Sent you a
+                            <h6 class="fw-bold mb-0">Md. Shahriar Kabir</h6><span class="text-muted text-sm">Sent you a
                                 message</span>
                         </div>
                     </a><a class="dropdown-item d-flex align-items-center p-3" href="#"> <img
                             class="avatar avatar-sm p-1 me-2"
                             src="https://d19m59y37dris4.cloudfront.net/bubbly/1-3-2/img/avatar-2.jpg"
-                            alt="Ashley Wood">
+                            alt="Md. Shahriar Kabir">
                         <div class="pt-1">
-                            <h6 class="fw-bold mb-0">Ashley Wood</h6><span class="text-muted text-sm">Sent you a
+                            <h6 class="fw-bold mb-0">Md. Shahriar Kabir</h6><span class="text-muted text-sm">Sent you a
                                 message</span>
                         </div>
                     </a>
