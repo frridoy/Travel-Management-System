@@ -56,6 +56,19 @@
                 <li class="sidebar-list-item"><a class="sidebar-link text-muted list" href="">Destination- Trash List</a></li>
             </ul>
         </li>
+        <li class="sidebar-list-item">
+            <a class="sidebar-link text-muted" href="#" data-bs-target="#userroleDropdown" role="button" aria-expanded="false" data-bs-toggle="collapse">
+                <svg class="svg-icon svg-icon-md me-3">
+                    <use xlink:href="icons/orion-svg-sprite.71e9f5f2.svg#design-1"> </use>
+                </svg>
+                <span class="sidebar-link-title">User Role </span>
+            </a>
+            <ul class="sidebar-menu list-unstyled collapse" id="userroleDropdown">
+                <li class="sidebar-list-item"><a class="sidebar-link text-muted create" href="{{route('user_role.create')}}">User Role- Create</a></li>
+                <li class="sidebar-list-item"><a class="sidebar-link text-muted list" href="{{route('user_role.list')}}">Users- List</a></li>
+                <li class="sidebar-list-item"><a class="sidebar-link text-muted list" href="">User- Trash List</a></li>
+            </ul>
+        </li>
 
     </ul>
 

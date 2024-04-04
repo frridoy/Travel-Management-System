@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transport List</title>
+    <title>Hotel List</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     {{-- <style>
@@ -26,7 +26,7 @@
 <body>
 
 <div class="container mt-5">
-    <h2 class="text-center mb-4">Transport List</h2>
+    <h2 class="text-center mb-4">Hotel List</h2>
 
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
@@ -36,6 +36,7 @@
                     <th>Code</th>
                     <th> Hotel Name</th>
                     <th>Type</th>
+                    <th>Address</th>
                     <th>Price (BDT)</th>
                     <th>Contact</th>
                     <th>Action</th>
@@ -53,6 +54,7 @@
                     <td>HT-{{ $hotel->id }}</td>
                     <td>{{ $hotel->name }}</td>
                     <td>{{ $hotel->type }}</td>
+                    <td>{{ $hotel->address }}</td>
                     {{-- <td>{{ $transports->image }}</td> --}}
                     <td>BDT {{ $hotel->price }}</td>
                     <td>{{ $hotel->number }}</td>

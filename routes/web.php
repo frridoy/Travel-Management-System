@@ -20,7 +20,7 @@ Route::post('/login/store', [UserController::class, 'loginPost'])->name('admin.l
 Route::group(['middleware' => 'auth'], function () {
 
 
-//below all routes if I want to visit those url I have to login first
+//below all routes if I want to visit I have to login first
 
 //dashboard
 
@@ -32,8 +32,6 @@ Route::get("/logout", [UserController::class, 'logout'])->name('admin.logout');
 
 
 //Hotel
-
-
 Route::get('/hotel/create',[HotelController::class,'create'])->name('hotel.create');
 Route::post('/hotel/store',[HotelController::class,'store'])->name('hotel.store');
 Route::get('/hotel/list',[HotelController::class,'list'])->name('hotel.list');
@@ -46,8 +44,6 @@ Route::post('/hotel/update/{id}',[HotelController::class,'update'])->name('hotel
 
 
 //Package
-
-
 Route::get('/package/create',[PackageController::class,'create'])->name('package.create');
 Route::post('/package/store',[PackageController::class,'store'])->name('package.store');
 Route::get('/package/list',[PackageController::class,'list'])->name('package.list');
@@ -61,8 +57,6 @@ Route::post('/package/update/{id}',[PackageController::class,'update'])->name('p
 
 
 //Transport
-
-
 Route::get('/transport/create',[TransportController::class, 'create'])->name('transport.create');
 Route::post('/transport/store',[TransportController::class, 'store'])->name('transport.store');
 Route::get('/transport/list',[TransportController::class, 'list'])->name('transport.list');
@@ -74,13 +68,17 @@ Route::get('/transport/edit/{id}',[TransportController::class, 'edit'])->name('t
 Route::post('/transport/update/{id}',[TransportController::class, 'update'])->name('transport.update');
 
 
-//location
 
+//Destination
 Route::get('/destination/create',[DestinationController::class,'create'])->name('destination.create');
 Route::post('/destination/store',[DestinationController::class,'store'])->name('destination.store');
 Route::get('/destination/list',[DestinationController::class,'list'])->name('destination.list');
 
 
+//User Role
+Route::get('/user/role/create',[UserController::class, 'create'])->name('user_role.create');
+Route::post('/user/role/store',[UserController::class, 'store'])->name('user_role.store');
+Route::get('/user/role/list',[UserController::class, 'list'])->name('user_role.list');
 
 
 

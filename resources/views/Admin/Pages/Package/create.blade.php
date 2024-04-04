@@ -17,6 +17,7 @@
                     <div class="mb-3">
                         <label for="pickupdate" class="form-label">Pickup Date:</label>
                         @php
+
                         // $now = now()->format('Y-m-d\TH:i');
 
                         $now = now()->addDay()->format('Y-m-d\TH:i');
@@ -93,100 +94,7 @@
     </div>
 </div>
 
-{{-- <script>
-    document.getElementById('pickupdate').addEventListener('change', function() {
-    var pickupDate = new Date(this.value);
-    var returnDate = new Date(document.getElementById('returndate').value);
 
-    if (pickupDate > returnDate) {
-      alert("Return date should be after pickup date.");
-      this.value = '';
-      return;
-    }
-
-    var diffTime = Math.abs(returnDate - pickupDate);
-    var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    var duration = diffDays + " days";
-
-    // Calculate number of nights
-    var diffNights = diffDays - 1;
-    if (diffNights > 0) {
-      duration += ` & ${diffNights} nights`;
-    }
-
-    document.getElementById('duration').value = duration;
-  });
-
-  document.getElementById('returndate').addEventListener('change', function() {
-    var pickupDate = new Date(document.getElementById('pickupdate').value);
-    var returnDate = new Date(this.value);
-
-    if (pickupDate > returnDate) {
-      alert("Return date should be after pickup date.");
-      this.value = '';
-      return;
-    }
-
-    var diffTime = Math.abs(returnDate - pickupDate);
-    var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    var duration = diffDays + " days";
-
-    // Calculate number of nights
-    var diffNights = diffDays - 1;
-    if (diffNights > 0) {
-      duration += ` & ${diffNights} nights`;
-    }
-
-    document.getElementById('duration').value = duration;
-  });
-</script> --}}
-{{-- <script>
-    document.getElementById('pickupdate').addEventListener('change', function() {
-        var pickupDate = new Date(this.value);
-        var returnDate = new Date(document.getElementById('returndate').value);
-
-        if (pickupDate > returnDate) {
-            alert("Return date should be after pickup date.");
-            this.value = '';
-            return;
-        }
-
-        var diffTime = Math.abs(returnDate - pickupDate);
-        var diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-        var duration = diffDays + " days";
-
-        // Calculate number of nights
-        var diffNights = diffDays;
-        if (diffNights > 0) {
-            duration += ` & ${diffNights} nights`;
-        }
-
-        document.getElementById('duration').value = duration;
-    });
-
-    document.getElementById('returndate').addEventListener('change', function() {
-        var pickupDate = new Date(document.getElementById('pickupdate').value);
-        var returnDate = new Date(this.value);
-
-        if (pickupDate > returnDate) {
-            alert("Return date should be after pickup date.");
-            this.value = '';
-            return;
-        }
-
-        var diffTime = Math.abs(returnDate - pickupDate);
-        var diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-        var duration = diffDays + " days";
-
-        // Calculate number of nights
-        var diffNights = diffDays;
-        if (diffNights > 0) {
-            duration += ` & ${diffNights} nights`;
-        }
-
-        document.getElementById('duration').value = duration;
-    });
-</script> --}}
 <script>
     document.getElementById('pickupdate').addEventListener('change', function() {
         updateDuration();

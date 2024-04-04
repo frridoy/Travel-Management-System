@@ -36,10 +36,10 @@
                     <th>Pick</th>
                     <th>Return</th>
                     <th>Duration</th>
-                    <th>Price/person</th>
-                    <th>Hotel Name</th>
-                    <th>Address</th>
-                    <th>Transport Name</th>
+                    <th>Price/p</th>
+                    <th>Hotel</th>
+                    {{-- <th>Address</th> --}}
+                    <th>Transport</th>
                     {{-- <th>Image</th> --}}
                     <th>Action</th>
                 </tr>
@@ -49,12 +49,12 @@
                 <tr>
                     <td>{{ $package->id }}</td>
                     <td>{{ $package->name }}</td>
-                    <td>{{ date('d M, Y \a\t g:i A', strtotime($package->pickupdate)) }}</td>
-                    <td>{{ date('d M, Y \a\t g:i A', strtotime($package->returndate)) }}</td>
+                    <td>{{ date('d M,Y \a\t g:iA', strtotime($package->pickupdate)) }}</td>
+                    <td>{{ date('d M,Y \a\t g:iA', strtotime($package->returndate)) }}</td>
                     <td>{{ $package->duration }}</td>
                     <td>{{ $package->price }}.00 BDT</td>
                     <td>{{ optional($package->hotels)->id }}. {{ optional($package->hotels)->name }} </td>
-                    <td>{{ optional($package->hotels)->address }} </td>
+                    {{-- <td>{{ optional($package->hotels)->address }} </td> --}}
                     <td>{{ optional($package->transports)->id }}. {{ optional($package->transports)->name }}
                     </td>
                     {{-- <td>
@@ -65,8 +65,15 @@
                     </td> --}}
 <td>
 
-<a href="{{route('package.delete',$package->id)}}"class="btn btn-danger">Trash</a>
-<a href="{{route('package.edit',$package->id)}}"class="btn btn-warning">Edit</a>
+    <a href="{{ route('package.delete', $package->id) }}" class="btn btn-warning">
+        <span style="font-size: 0.9rem;"><i class="fas fa-trash"></i></span>
+
+    </a>
+
+    <a href="{{ route('package.edit', $package->id) }}" class="btn btn-warning">
+        <span style="font-size: 0.7rem;"><i class="fas fa-edit"></i></span>
+
+    </a>
 
 </td>
         @endforeach

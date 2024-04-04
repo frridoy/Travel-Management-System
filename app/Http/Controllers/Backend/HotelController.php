@@ -48,7 +48,7 @@ class HotelController extends Controller
     public function list()
     {
 
-        $hotels=Hotel::paginate(2);
+        $hotels=Hotel::paginate(4);
         // dd($hotels);
         return view('Admin.Pages.Hotel.list',compact('hotels'));
     }
