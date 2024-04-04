@@ -5,7 +5,8 @@
     <div class="container-fluid px-lg-4 px-xl-5">
         <!-- Page Header-->
         <div class="page-header">
-            <h1 class="page-heading">Default dashboard</h1>
+            <h1 class="page-heading">Dashboard</h1>
+           
         </div>
         <section class="mb-3 mb-lg-5">
             <div class="row mb-3">

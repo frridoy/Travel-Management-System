@@ -73,6 +73,10 @@ Route::post('/transport/update/{id}',[TransportController::class, 'update'])->na
 Route::get('/destination/create',[DestinationController::class,'create'])->name('destination.create');
 Route::post('/destination/store',[DestinationController::class,'store'])->name('destination.store');
 Route::get('/destination/list',[DestinationController::class,'list'])->name('destination.list');
+Route::get('/destination/delete/{id}',[DestinationController::class,'delete'])->name('destination.delete');
+Route::get('/destination/trash',[DestinationController::class,'trash'])->name('destination.trash');
+Route::get('/destination/restore/{id}',[DestinationController::class,'restore'])->name('destination.restore');
+Route::get('/destination/force-delete/{id}',[DestinationController::class,'forceDelete'])->name('destination.forceDelete');
 
 
 //User Role

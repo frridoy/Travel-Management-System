@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('distance')->nullable();
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 

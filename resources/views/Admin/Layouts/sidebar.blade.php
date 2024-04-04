@@ -53,7 +53,7 @@
             <ul class="sidebar-menu list-unstyled collapse" id="destinationDropdown">
                 <li class="sidebar-list-item"><a class="sidebar-link text-muted create" href="{{route('destination.create')}}">Destination- Create</a></li>
                 <li class="sidebar-list-item"><a class="sidebar-link text-muted list" href="{{route('destination.list')}}">Destination- List</a></li>
-                <li class="sidebar-list-item"><a class="sidebar-link text-muted list" href="">Destination- Trash List</a></li>
+                <li class="sidebar-list-item"><a class="sidebar-link text-muted list" href="{{route('destination.trash')}}">Destination- Trash List</a></li>
             </ul>
         </li>
         <li class="sidebar-list-item">
