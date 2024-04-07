@@ -1,6 +1,6 @@
 <header class="container-fluid">
     <div class="header-top">
-         <div class="container">
+         {{-- <div class="container">
            <div class="row">
              <div class="col-sm-4 d-none d-sm-block contacthd">
                <p><a href="">Japan</a> &nbsp;&nbsp; <span>/</span> &nbsp;&nbsp; <a href="">Spain</a><span>/</span> <a href="">Italy</a></p>
@@ -27,7 +27,7 @@
                </ul>
              </div>
            </div>
-         </div>
+         </div> --}}
 
     </div>
     <div id="menu-jk" class="header-bottom">

@@ -24,7 +24,8 @@ class PackageController extends Controller
         // print_r($request->all());
 
         $validation = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
+            'startingpoint' => 'required|string|max:255',
+            'destination' => 'required|string|max:255',
             'pickupdate' => 'required|date|after_or_equal:today',
             'returndate' => 'required|date|after_or_equal:pickupdate',
             'duration' => 'required|string|max:255',
@@ -56,7 +57,8 @@ class PackageController extends Controller
         }
 
         Package::create([
-            'name' => $request->name,
+            'startingpoint' => $request->startingpoint,
+            'destination' => $request->destination,
             'pickupdate' => $request->pickupdate,
             'duration' => $request->duration,
             'returndate' => $request->returndate,

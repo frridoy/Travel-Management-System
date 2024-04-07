@@ -9,8 +9,13 @@
                 <form method="post" action="{{ route('package.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
-                        <label for="name" class="form-label">Name:</label>
-                        <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}"
+                        <label for="startingpoint" class="form-label">Strating Point:</label>
+                        <input type="text" class="form-control" id="startingpoint" name="startingpoint" value="{{ old('startingpoint') }}"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="destination" class="form-label">Destination:</label>
+                        <input type="text" class="form-control" id="destination" name="destination" value="{{ old('destination') }}"
                             required>
                     </div>
 

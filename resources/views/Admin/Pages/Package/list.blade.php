@@ -48,7 +48,7 @@
                 @foreach($packages as $package)
                 <tr>
                     <td>{{ $package->id }}</td>
-                    <td>{{ $package->name }}</td>
+                    <td> {{ $package->startingpoint }} ⬌ {{ $package->destination }}</td>
                     <td>{{ date('d M,Y \a\t g:iA', strtotime($package->pickupdate)) }}</td>
                     <td>{{ date('d M,Y \a\t g:iA', strtotime($package->returndate)) }}</td>
                     <td>{{ $package->duration }}</td>

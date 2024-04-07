@@ -1,4 +1,4 @@
-<footer class="container-fluid footer-cont">
+{{-- <footer class="container-fluid footer-cont">
     <div class="container">
         <div class="footer-top row">
             <div class="col-md-4 foot-logo">
@@ -68,7 +68,7 @@
             </div>
         </div>
     </div>
-</footer>
+</footer> --}}
 
 <div class="copy">
     <div class="container">

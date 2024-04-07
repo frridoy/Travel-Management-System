@@ -17,10 +17,10 @@
             <div class="carousel-item ">
                 <img class="d-block w-100" src="/Frontend/assets/images/slider/slid_1.jpg" alt="First slide">
                 <div class="carousel-caption fvgb d-none d-md-block">
-                    <h5 class="animated bounceInDown">Create an Awesome Website Today </h5>
-                    <p class="animated fadeInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, <br>
-                        aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis <br>
-                        sed sagittis at, sagittis quis neque. Praesent.</p>
+                    <h5 class="animated bounceInDown">Package </h5>
+                    <p class="animated fadeInLeft">awesomepackage <br>
+                       for you<br>
+                       natural beauty</p>
 
                     <div class="row vbh">
 
@@ -98,14 +98,14 @@
             <p>There are many variations of passages of Lorem Ipsum available form</p>
         </div>
         <div class="pack-row row">
-            @foreach ($packages as $package )
 
+            @foreach ($packages as $package)
 
             <div class="col-md-4">
                 <div class="pac-col">
                     <img src="/Frontend/assets/images/packages/pack1.jpg" alt="">
                     <div class="packdetail">
-                        <h4>{{$package->name}}</h4>
+                        <h4>{{$package->startingpoint}} ⬌ {{$package->destination}}</h4>
                         <div class="daydet">
                             <span><i class="far fa-calendar"></i> {{ date('d M, Y', strtotime($package->pickupdate)) }} at {{ date('h:i A', strtotime($package->pickupdate)) }}</span>
                             <br>

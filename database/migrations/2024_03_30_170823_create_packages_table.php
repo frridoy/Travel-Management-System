@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('startingpoint');
+            $table->string('destination');
             $table->dateTime('pickupdate');
             $table->string('duration');
             $table->dateTime('returndate');
