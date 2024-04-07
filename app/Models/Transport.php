@@ -16,4 +16,9 @@ class Transport extends Model
     {
         return $this->hasOne(Package::class,'transport_id', 'id');
     }
+
+    public function destinations()
+    {
+        return $this->belongsTo(Destination::class, 'destination_id','id');
+    }
 }

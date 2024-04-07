@@ -35,6 +35,7 @@
                     <th>#</th>
                     <th> Bus Name</th>
                     <th>Type</th>
+                    <th>Destination</th>
                     {{-- <th>Image</th> --}}
                     <th>Price (BDT)</th>
                     <th>Contact Number</th>
@@ -47,6 +48,13 @@
                     <td>{{ $transport->id }}</td>
                     <td>{{ $transport->name }}</td>
                     <td>{{ $transport->type }}</td>
+                    <td>
+                        @if ($transport->destinations)
+                        {{ optional($transport->destinations)->id }}. {{ optional($transport->destinations)->name }}
+                    @else
+                        Not Found
+                    @endif
+                </td>
                     {{-- <td>{{ $transports->image }}</td> --}}
                     <td>BDT {{ $transport->price }}</td>
                     <td>{{ $transport->number }}</td>

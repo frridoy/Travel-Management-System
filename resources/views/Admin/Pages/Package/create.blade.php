@@ -62,7 +62,7 @@
                             <option selected disabled value="">Select Transport</option>
                             @foreach ($transports as $transport)
                             <option value="{{ $transport->id }}" {{ old('transport_id')==$transport->id ? 'selected' : '' }}>
-                                {{$transport->id}}. {{ $transport->name }}, {{$transport->address}} & {{$transport->type}}
+                                {{$transport->id}}. {{ $transport->name }}, {{ $transport->type }} && {{ optional($transport->destinations)->name }}
                             </option>
                             @endforeach
                         </select>

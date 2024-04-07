@@ -14,7 +14,7 @@ class PackageController extends Controller
     public function create()
     {
         $hotels = Hotel::all();
-        $transports = Transport::all();
+        $transports = Transport::with('destinations')->get();
         return view('Admin.Pages.Package.create', compact('hotels', 'transports'));
     }
     public function store(Request $request)

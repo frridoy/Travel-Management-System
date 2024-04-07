@@ -67,7 +67,7 @@ class DestinationController extends Controller
         {
             $destination->restore();
         }
-        notify()->error('Destination Info Restored Successfuly');
+        notify()->success('Destination Info Restored Successfuly');
         return redirect()->back();
     }
 

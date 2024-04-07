@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Destination;
 use App\Models\Transport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -11,7 +12,8 @@ class TransportController extends Controller
 {
     public function create()
     {
-        return view('Admin.Pages.Transport.create');
+        $destinations=Destination::all();
+        return view('Admin.Pages.Transport.create',compact ('destinations'));
     }
     public function store(Request $request)
     {
@@ -20,6 +22,7 @@ class TransportController extends Controller
         [
             'name'=>'required',
             'type'=>'required',
+            'destination_id' => 'required|exists:destinations,id',
             'price'=>'required|numeric|gt:0',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'number'=>'required|regex:/^01[3-9][0-9]{8}$/|numeric',
@@ -38,6 +41,7 @@ class TransportController extends Controller
         Transport::create([
             'name'=>$request->name,
             'type'=>$request->type,
+            'destination_id'=>$request->destination_id,
             'price'=>$request->price,
             'image'=>$request->image,
             'number'=>$request->number,
@@ -50,9 +54,10 @@ class TransportController extends Controller
 
     public function list ()
     {
-        $transports=Transport::all();
+        $transports = Transport::with('destinations')->get();
         return view('Admin.Pages.Transport.list', compact('transports'));
     }
+   
 
     public function delete ($id)
     {

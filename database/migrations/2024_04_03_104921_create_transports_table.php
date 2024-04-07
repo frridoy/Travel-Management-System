@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('type');
+            $table->unsignedBigInteger('destination_id');
+            $table->foreign('destination_id')->references('id')->on('destinations');
             $table->string('image')->nullable();
             $table->string('price');
             $table->string('number');

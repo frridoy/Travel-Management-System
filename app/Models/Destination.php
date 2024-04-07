@@ -12,4 +12,9 @@ class Destination extends Model
     use SoftDeletes;
     protected $guarded=[];
 
+
+    public function transports()
+    {
+        return $this->hasOne(Transport::class, 'destination_id','id');
+    }
 }

@@ -55,6 +55,19 @@
             </select>
 
         </div>
+
+        <div class="mb-3">
+            <label for="destination_id" class="form-label">Destination:</label>
+            <select class="form-select" id="destination_id" name="destination_id">
+                <option selected disabled value="">Select Destination</option>
+                @foreach ($destinations as $destination)
+                <option value="{{ $destination->id }}" {{ old('destination_id')==$destination->id ? 'selected' : '' }}>
+                    {{$destination->id}}. {{ $destination->name }}
+                </option>
+                @endforeach
+            </select>
+        </div>
+
         <div class="form-group">
             <label for="image">Image</label>
             <div class="custom-file">
