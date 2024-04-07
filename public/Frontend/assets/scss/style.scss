@@ -1,0 +1,597 @@
+/* =======================================================================
+Template Name: Youtubers
+Author:  SmartEye Technologies
+Author URI: www.smarteyeapps.com
+Version: 1.0
+coder name:Prabin Raja
+Description: This Template is created for Youtubers
+======================================================================= */
+
+/* ===================================== Import Variables ================================== */
+@import 'variable';
+/* ===================================== Basic CSS ==================================== */
+@import 'base/basic_setup';
+
+/* ===================================== Header Design CSS ==================================== */
+
+header{
+    position: absolute;
+    background-color: #FFF;
+     @include shado-1();
+    z-index: 999;
+    .header-top{
+        padding: 12px;
+        background-color: #343a40;
+        .contacthd{
+           
+            p{
+                 color: #FFF;
+                 font-size: .95rem;
+                i{
+                    margin-right: 10px;
+                }
+                a{
+                    color: #fff;
+                }
+                span{
+                    width: 30px;
+                    text-align: center;
+                }
+            }
+        }
+        .email{
+            float: right;
+            border-right:1px solid #CCC; 
+            li{
+                color: #FFF;
+                float: left;
+                padding: 0px 10px;
+                    font-size: .95rem;
+                i{
+                    margin-right: 10px;
+                }
+            }
+            @media screen and (max-width: 392px){
+                display: none;
+            }
+        }
+        .social-login{
+            float: right;
+            li{
+                color: #FFF;
+                float: left;
+                padding: 0px 10px;
+            }
+        }
+    }
+    .header-bottom{
+        
+        .logo{
+           padding-top: 11px;
+            @media screen and (max-width: 767px){
+                padding-top: 7px;
+                padding-bottom: 7px;
+            }
+            img{
+                max-width: 260px;
+            }
+        }
+        .navs{
+            ul{
+                float: right;
+                li{
+                    float: left;
+                    padding: 30px 30px;
+                    font-weight: 700;
+                    font-size: .9rem;
+                    text-transform: uppercase;
+                    a{
+                        color: #444;
+                    }
+                    @media screen and (max-width: 1075px){
+                        padding: 30px 20px;
+                    }
+                    @media screen and (max-width: 950px){
+                         padding: 30px 13px;
+                    }
+                     @media screen and (max-width: 870px){
+                         padding: 30px 10px;
+                         font-size: .8rem;
+                    }
+                    @media screen and (max-width: 767px){
+                        float: none;
+                        color: #071c35;
+                        padding: 10px;
+                        font-weight: 600;
+                        a{
+                            color: #071c35;
+                        }
+                    }
+                }
+                @media screen and (max-width: 767px){
+                    width: 100%;
+                    
+                }
+            }
+        }
+    }
+}
+.small-menu{
+    float: right;
+    color: #071c35;
+    font-size: 1.8rem;
+    position: absolute;
+    right: 18px;
+    top: 23px;
+}
+.scroll-to-fixed-fixed{
+    background-color: #FFF;
+    @include shado-1();
+    .navs ul li a{
+       color: #071c35 !important; 
+    }
+                
+        
+    @media screen and (max-width: 767px){
+        padding-bottom: 10px;
+    }
+}
+
+
+/* ===================================== Slider Style Starts Here ===================================== */
+
+.slider-detail{
+    padding-top: 130px;
+    z-index: -9;
+    @media screen and (max-width: 992px){
+       
+        .container{
+            padding: 0px;
+        }
+    }
+    @media screen and (max-width: 767px){
+         padding-top: 120px;
+    }
+    @media screen and (max-width: 576px){
+           
+    }
+    .carousel-caption{
+        text-align: left;
+        bottom: 110px;
+        text-align: center;
+        @media screen and (max-width: 991px){
+            bottom: 10px;
+            h5{
+                font-size: 28px;
+            }
+        }
+        @media screen and (max-width: 800px){
+            h5{
+                font-size: 18px;
+            }
+        }
+        h5{
+            font-size: 44px;
+            margin-left: -40px;
+            font-weight: 600;
+            color: #fff;
+        }
+        p{
+            margin-left: -40px;
+            font-weight: 500;
+            margin-top: 40px;
+            font-size: 16px;
+             color: #fff;
+        }
+    }
+    .vbh{
+        margin-left: -40px;
+        text-align: center;
+        display: block;
+        .btn{
+            padding: 10px 30px;
+            margin-top: 40px;
+           font-weight: 600;
+            font-size: 18px;
+        }
+    }
+    .vdg-cur{
+        color: #ffffff;
+    }
+    .fvgb{
+        color: #ffffff;
+    }
+    .carousel-control-prev{
+        opacity: 1;
+    }
+    .carousel-control-prev-icon{
+        background-image: none;
+        background-color: $color-primary;
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        padding: 6px;
+        i{
+            font-size: 1.1rem;
+        }
+
+    }
+    
+    .carousel-control-next{
+        opacity: 1;
+    }
+    .carousel-control-next-icon{
+        background-image: none;
+        background-color: $color-primary;
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        padding: 6px;
+        i{
+            font-size: 1.1rem;
+        }
+
+    }
+    
+    
+}
+
+/* ===================================== Search Box Style Starts Here ===================================== */
+
+.search-container{
+    margin-top: -40px;
+   
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+    @media screen and (max-width: 767px){
+        margin-top: 0px;
+        position: relative;
+    }
+    .search-box{
+        @include shado-1();
+         background-color: #FFF;
+        padding: 30px 15px;
+        .form-control{
+            border-radius: 0px;
+            margin-bottom: 0px;
+        }
+        .btn{
+            border-radius: 0px;
+        }
+    }
+}
+
+/* ===================================== Search Box Style Starts Here ===================================== */
+
+.top-packages{
+    padding-top: 90px;
+    @include big-padding();
+    .pack-row{
+        .pac-col{
+            background-color: #FFF;
+            box-shadow: 0px 6px 4.7px 0.3px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+            img{
+                width: 100%;
+            }
+            .packdetail{
+                padding: 20px;
+                h4{
+                    font-size: 1.2rem;
+                }
+                .daydet{
+                    padding-top: 5px;
+                    span{
+                        font-size: .85rem;
+                    }
+                    b{
+                        float: right;
+                        font-size: 1.4rem;
+                        color: $color-primary;
+                    }
+                }
+                .eview-row{
+                    padding-top: 5px;
+                    ul{
+                        li{
+                            float: left;
+                            font-size: .8rem;
+                            padding-right: 3px;
+                            i{
+                                color: #ffc800;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+/* ===================================== Offers Starts Here ===================================== */
+
+.lloking-for{
+  background-image: url("../images/bg.jpg");
+ 
+  background-size: 100%;
+  .inn-lay{
+    background-color: rgba(0, 0, 0, 0.35);
+    @include big-padding();
+    padding-top: 110px;
+    padding-bottom: 110px;
+    .natur-col{
+        text-align: left;
+       h2{
+          color: #FFF;
+         font-weight: 600;
+         font-size: 2.8rem;
+           text-align: left;
+       }
+      h4{
+        font-size: .9rem;
+        margin-bottom: 20px;
+        font-weight: 600;
+        color: #FFF;
+          text-align: left;
+          line-height: 22px;
+      }
+      .btn{
+        border-radius: 0px;
+        padding: 10px 55px;
+        font-weight: 700;
+          border-radius: 50px;    
+      }
+    }
+  }
+}
+
+/* ===================================== Blog Starts Here ===================================== */
+
+.blog {
+  padding: 50px;
+  background-color: #FBFBFB; }
+@media screen and (max-width: 990px) {
+  .blog {
+    padding: 0px 10px; } }
+@media screen and (max-width: 1199px) {
+  .blog .container {
+    max-width: 100%; } }
+.blog .blog-singe {
+
+  @include shado-3();
+  border-radius: 2px;
+  background-color: #FFF;
+  margin-bottom: 30px; }
+.blog .blog-singe .blog-img-tab {
+  padding: 0px; 
+    img{
+        width: 100%;
+    }
+}
+.blog .blog-singe .blog-content-tab {
+  padding: 15px; }
+.blog .blog-singe .blog-content-tab h2 {
+  font-size: 19px; }
+.blog .blog-singe .blog-content-tab i {
+  margin-right: 10px;
+  font-size: 12px; }
+.blog .blog-singe .blog-content-tab i small {
+  margin-left: 5px;
+  font-size: 100%; }
+.blog .blog-singe .blog-content-tab .blog-desic {
+  margin-top: 8px;
+  font-size: 12px;
+  text-indent: 20px;
+  margin-bottom: 10px; }
+.blog .blog-singe .blog-content-tab a {
+  color: #06b2b6;
+  font-size: 12px; }
+.blog .blog-singe .blog-content-tab a i {
+  margin-left: 15px;
+  font-size: 13px; }
+
+.blog-row{
+  margin-top: 20px;
+}
+
+
+
+/* =================== Footer Style Starts Here =================== */
+
+.footer-cont{
+	background-color: #212121;
+	color: #FFF;
+	@include big-padding();
+
+	
+	.footer-top{
+		padding-bottom: 40px;
+		.foot-logo{
+			h2{
+				color: #FFF;
+				font-weight: 600;
+				margin-top: 25px;
+			}
+			
+		}
+		.foot-addr{
+			p{
+
+			}
+			ul{
+				
+				li{
+					float: left;
+					padding: 10px;
+					i{
+						margin-right: 2px;
+					}
+				}
+			}
+		}
+	}
+	.foot-botom{
+		.fotter-coo{
+			h5{
+				color: #f78d15;
+				font-size: 1rem;
+				margin-bottom: 20px;
+			}
+			ul{
+				li{
+					font-size: .9rem;
+					padding: 10px 3px;
+					i{
+						margin-right: 5px;
+					}
+				}
+			}
+			.gallery-row{
+				margin-top: 5px;
+				.gall-col{
+					padding: 5px;
+				}
+			}
+			
+		}
+	}
+}
+
+.footer-ablove {
+  padding: 30px;
+  background-color: #ff5722;
+  color: #FFF;
+  font-size: 1.5rem; }
+.footer-ablove .btn {
+  float: right;
+  background-color: #FFF;
+   }
+
+/* =================== Copyroght Starts Here =================== */
+
+.copy {
+  padding: 20px;
+  background-color: #191616;
+  color: #FFF; }
+.copy a {
+  color: #FFF; }
+.copy span {
+  float: right; }
+.copy span i {
+  margin-right: 20px; }
+
+.cop-ck{
+  padding: 20px;
+  background-color: #ffffffbd;
+  h2{
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+}
+
+
+/* ===================================== Travel Destinations Style CSS ==================================== */
+
+.travel-destination{
+    @include big-padding();
+    background-color: #cccccc14;
+    .destination-row{
+        .descol{
+            margin-bottom: 30px;
+        }
+        .destcol{
+            img{
+                border-radius: 5px;
+                width: 100%;
+            }
+            .layycover{
+                background-color: rgba(0,0,0,0.4);
+                position: absolute;
+                width: calc(100% - 30px);
+                height: 100%;
+                top: 0px;
+                border-radius: 5px;
+                z-index: 99;
+                h4{
+                    position: absolute;
+                    width: 100%;
+                    color: #FFF;
+                    bottom: 7px;
+                    left: 10px;
+                    font-weight: 600;
+                    font-size: 1.2rem;
+                }
+                span{
+                    font-weight: 400;
+                    font-size: .7rem;
+                }
+            }
+        }
+    }
+}
+
+
+/* ===================================== About CSS ================================== */
+
+.about-us{
+  background-color: #FFF;
+  @include big-padding();
+  .natur-row{
+    margin-top: 20px;
+  }
+  .text-part{
+    h2{
+      font-weight: 600;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+    p{
+      text-indent: 20px;
+      margin-bottom: 15px;
+      line-height: 27px;
+      font-weight: 500;
+      text-align: justify;
+        font-size: .9rem;
+    }
+
+  }
+  .image-part{
+    img{
+      background-color: #FFF;
+      padding: 10px;
+      box-shadow: 0 0 10px 5px #ebebeb;
+    }
+  }
+}
+
+
+/* ===================================== Our Team Style  ================================== */
+
+.our-team {
+  padding: 50px; }
+  @media screen and (max-width: 940px) {
+    .our-team {
+      padding: 50px 10px; } }
+.our-team .team-row {
+    margin-top: 20px; }
+.our-team .team-row .single-usr {
+      box-shadow: 0 2px 6px 0 rgba(218, 218, 253, 0.65), 0 2px 6px 0 rgba(206, 206, 238, 0.54);
+      margin-bottom: 20px; 
+}
+.our-team .team-row .single-usr img {
+        width: 100%; 
+}
+.our-team .team-row .single-usr .det-o {
+        padding: 20px;
+        background-color: #0363b0; 
+}
+.our-team .team-row .single-usr .det-o h4 {
+          color: #FFF;
+          margin-bottom: 0px; 
+}
+.our-team .team-row .single-usr .det-o i {
+          color: #FFF; 
+}
+

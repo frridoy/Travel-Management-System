@@ -7,8 +7,15 @@ use App\Http\Controllers\Backend\HotelController;
 use App\Http\Controllers\Backend\PackageController;
 use App\Http\Controllers\Backend\TransportController;
 use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\Frontend\HomeController;
 use Illuminate\Support\Facades\Route;
 
+
+
+Route::get('/', [HomeController::class, 'home'])->name('home');
+
+
+Route::group(['prefix' => 'admin'], function () {
 
 
 //log in
@@ -85,6 +92,8 @@ Route::post('/user/role/store',[UserController::class, 'store'])->name('user_rol
 Route::get('/user/role/list',[UserController::class, 'list'])->name('user_role.list');
 
 
+
+});
 
 });
 
