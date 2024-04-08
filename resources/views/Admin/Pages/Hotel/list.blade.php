@@ -34,10 +34,11 @@
                 <tr>
                     <th>SI</th>
                     <th>Code</th>
-                    <th> Hotel Name</th>
+                    <th>Name</th>
                     <th>Type</th>
                     <th>Address</th>
-                    <th>Price (BDT)</th>
+                    <th>Single(BDT)</th>
+                    <th>Double(BDT)</th>
                     <th>Contact</th>
                     <th>Action</th>
                 </tr>
@@ -56,7 +57,8 @@
                     <td>{{ $hotel->type }}</td>
                     <td>{{ $hotel->address }}</td>
                     {{-- <td>{{ $transports->image }}</td> --}}
-                    <td>BDT {{ $hotel->price }}</td>
+                    <td>BDT {{ $hotel->singlebedprice }}</td>
+                    <td>BDT {{ $hotel->doublebedprice }}</td>
                     <td>{{ $hotel->number }}</td>
 
                     <td>

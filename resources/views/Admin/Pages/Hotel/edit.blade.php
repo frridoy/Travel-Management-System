@@ -72,8 +72,12 @@
                             <input type="text" name="address" value="{{$hotel->address}}" id="address" class="form-control" >
                         </div>
                         <div class="form-group">
-                            <label for="price">Price:</label>
-                            <input type="number" name="price"  value="{{$hotel->price}}" id="price" class="form-control" min="1" step="1" >
+                            <label for="singlebedprice">Single Bed Room Price:</label>
+                            <input type="number" name="singlebedprice"  value="{{$hotel->singlebedprice}}" id="singlebedprice" class="form-control" min="1" step="1" >
+                        </div>
+                        <div class="form-group">
+                            <label for="doublebedprice">Double Bed Room Price:</label>
+                            <input type="number" name="doublebedprice"  value="{{$hotel->doublebedprice}}" id="doublebedprice" class="form-control" min="1" step="1" >
                         </div>
                         <div class="form-group">
                             <label for="number">Contact Number:</label>

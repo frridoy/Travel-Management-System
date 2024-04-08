@@ -1,274 +1,91 @@
-<!doctype html>
-<html lang="en">
+@extends('Frontend.master')
+@section('content')
+    <br> <br> <br>
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Free Tour Package Website Tempalte | Smarteyeapps.com</title>
-    <link rel="shortcut icon" href="assets/images/fav.png" type="image/x-icon">
-   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/images/fav.jpg">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/plugins/slider/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/plugins/slider/css/owl.theme.default.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-<body>
-  
-    <!----- ############# Header ################ ----->
-    
-   <header class="container-fluid">
-       <div class="header-top">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+        <style>
+            body {
+                background-color: #f8f9fa;
+                color: #495057;
+            }
+
+            .section-title {
+                color: #007bff;
+            }
+
+            .about-img {
+                border-radius: 15px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .brand-feature {
+                border: 1px solid #dee2e6;
+                border-radius: 10px;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <section class="py-5">
             <div class="container">
-              <div class="row">
-                <div class="col-sm-4 d-none d-sm-block contacthd">
-                  <p><a href="">Japan</a> &nbsp;&nbsp; <span>/</span> &nbsp;&nbsp; <a href="">Spain</a><span>/</span> <a href="">Italy</a></p>
-                </div>
-                <div class="col-sm-8">
-
-                  <ul class="social-login">
-                    <li>
-                      <i class="fab fa-facebook-square"></i>
-                    </li>
-                    <li>
-                      <i class="fab fa-twitter-square"></i>
-                    </li>
-                    <li>
-                      <i class="fab fa-instagram"></i>
-                    </li>
-                    <li>
-                      <i class="fab fa-linkedin"></i>
-                    </li>
-                  </ul>
-
-                  <ul class="email">
-                    <li><i class="fa fa-envelope"></i>smartcam@gamil.com</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-       </div>
-       <div id="menu-jk" class="header-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="logo col-md-3">
-                        <img src="assets/images/logo.png" alt="">
-                        <a data-toggle="collapse" data-target="#menu" href="#menu"><i class="fas d-block d-md-none small-menu fa-bars"></i></a>
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <img class="img-fluid about-img" src="{{ asset('assests/images/about us.jpg') }}" alt="About Image">
                     </div>
-                    <div id="menu" class="navs d-none d-md-block col-md-9">
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about_us.html">About Us</a></li>
-                            <li><a href="packages.html">Packages</a></li>
-                            <li><a href="product.html">Destinations</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="contact_us.html">Contact Us</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-  </header>
-   
-   <!--  ************************* Page Title Starts Here ************************** -->
-<div class="page-nav no-margin row">
-    <div class="container">
-        <div class="row">
-            <h2>About Tour & Travel</h2>
-            <ul>
-                <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
-                <li><i class="fas fa-angle-double-right"></i> About Us</li>
-            </ul>
-        </div>
-    </div>
-</div>
-     
-      
-  <!--  ************************* About Us Starts Here ************************** -->    
-       
-<div class="about-us container-fluid">
-    <div class="container">
-
-        <div class="row natur-row no-margin w-100">
-            <div class="text-part col-md-6">
-                <h2>About Travel Packages</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius faucibus
-                    ligula non congue. Suspendisse at pretium massa, sit amet
-                    vulputate nibh. Nam posuere eros dolor. Donec vel arcu sagittis, pretium nisl </p>
-                <p> Cras faucibus laoreet nibh, sit amet tincidunt leo mollis in. Etiam eu mauris metus.
-                    Nulla facilisi. Etiam vestibulum,
-                    nisi et convallis elementum, leo orci aliquam metus, id posuere massa neque vitae
-                    arcu.</p>
-
-                <p>Integer vulputate vehicula dolor a eleifend. Duis aliquam condimentum sapien,
-                    eget tempor justo. Aenean porttitor nibh metus, sollicitudin egestas metus posuere et
-                    . Fusce egestas volutpat metus, in sodales sem bibendum porta. Nunc hendrerit nunc sit
-                    amet tellus posuere, at malesuada sem gravida. Integer maximus ultricies augue, at
-                    dapibus elit bibendum consequat. Cras faucibus tellus eleifend, fermentum purus in,
-                    dapibus sapien. Praesent nec ornare risus. Etiam iaculis, ligula vel gravida
-                    vestibulum, urna justo posuere ante,
-                    id pretium massa arcu sed mi. Nunc a sollicitudin sem. Duis tempus </p>
-            </div>
-            <div class="image-part col-md-6">
-                <img src="assets/images/about.jpg" alt="">
-            </div>
-        </div>
-    </div>
-    </div> 
-       
-
-    <!-- ################# Our Team Starts Here#######################--->
-    <section class="our-team">
-        <div class="container">
-            <div class="session-title row">
-                <h2>Our Team</h2>
-               
-            </div>
-            <div class="row team-row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-usr">
-                        <img src="assets/images/team/team-memb1.jpg" alt="">
-                        <div class="det-o">
-                            <h4>David Kanuel</h4>
-                            <i>Facial Surgan</i>
+                    <div class="col-md-6">
+                        <div class="section-title mb-4">
+                            <h2 class="h1">Who Are We?</h2>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-usr">
-                        <img src="assets/images/team/team-memb2.jpg" alt="">
-                        <div class="det-o">
-                            <h4>David Kanuel</h4>
-                            <i>Facial Surgan</i>
+                        <p class="lead fs-4 text-secondary mb-4">We help people build incredible brands and superior
+                            products.
+                            Our perspective is to furnish outstanding captivating services.</p>
+                        <div class="brand-feature">
+                            <div class="d-flex">
+                                <div class="me-4 text-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                        fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="mb-3">Versatile Brand</h4>
+                                    <p class="text-secondary mb-0">We are crafting a digital method that subsists life
+                                        across
+                                        all mediums.</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-usr">
-                        <img src="assets/images/team/team-memb3.jpg" alt="">
-                        <div class="det-o">
-                            <h4>David Kanuel</h4>
-                            <i>Facial Surgan</i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-usr">
-                        <img src="assets/images/team/team-memb4.jpg" alt="">
-                        <div class="det-o">
-                            <h4>David Kanuel</h4>
-                            <i>Facial Surgan</i>
+                        <div class="brand-feature">
+                            <div class="d-flex">
+                                <div class="me-4 text-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                        fill="currentColor" class="bi bi-fire" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16Zm0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15Z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="mb-3">Digital Agency</h4>
+                                    <p class="text-secondary mb-0">We believe in innovation by merging primary with
+                                        elaborate ideas.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-
-    </section>
-    
-
-    <!-- ######## Footer Start Here ####### -->   
-    
-        <footer class="container-fluid footer-cont">
-        <div class="container">
-            <div class="footer-top row">
-                <div class="col-md-4 foot-logo">
-                    <h2>Travel Packages</h2>
-                </div>
-                <div class="col-md-8 foot-addr">
-                    <p>Donec venenatis metus at diam condimentum pretiuteger aliquet a turpis quis pel len tesque ueta turpis quis venenatissolelementum</p>
-                    <ul>
-                        <li class="pl-0"><i class="fas fa-map-marker-alt"></i> Antonya Street, 23/H-2, Building, TA, AUS </li>
-                        <li><i class="fas fa-mobile-alt"></i> +177 (089) 987665  </li>
-                        <li><i class="far fa-envelope"></i> support@smarteyeapps.com </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="foot-botom row">
-                <div class="col-md-3">
-                    <div class="fotter-coo">
-                        <h5>IMPORTANT LINKS</h5>
-                        <ul>
-                            <li><i class="fas fa-caret-right"></i> ABOUT US</li>
-                            <li><i class="fas fa-caret-right"></i> COMPANY PROFILE</li>
-                            <li><i class="fas fa-caret-right"></i> OUR SERVICES</li>
-                            <li><i class="fas fa-caret-right"></i> CONTACT US</li>
-                            <li><i class="fas fa-caret-right"></i> READ BLOG</li>
-                        </ul>
-                    </div>
-                    
-                </div>
-                 <div class="col-md-4">
-                    <div class="fotter-coo">
-                        <h5>GLOBAL UPDATE NEWS</h5>
-                        <ul>
-                            <li><i class="fas fa-caret-right"></i> 100 CHILDREN RESCUE FROM WAR ZONE</li>
-                            <li><i class="fas fa-caret-right"></i> THR FRESH HOUSE CHILD</li>
-                            <li><i class="fas fa-caret-right"></i> CREATE AWARENESS IN EDUCATON</li>
-                            <li><i class="fas fa-caret-right"></i> WHAT HAPPEN WHEN WE LIVE!</li>
-                            <li><i class="fas fa-caret-right"></i> READ BLOG</li>
-                        </ul>
-                    </div>
-                    
-                </div>
-                <div class="col-md-5">
-                    <div class="fotter-coo">
-                        <h5>PHOTO GALLERY</h5>
-                        <div class="gallery-row row">
-                            <div class="col-md-4 col-6 gall-col">
-                                <img src="assets/images/blog/blog1.jpg" alt="">
-                            </div>
-                            <div class="col-md-4 col-6 gall-col">
-                                <img src="assets/images/blog/blog2.jpg" alt="">
-                            </div>
-                            <div class="col-md-4 col-6 gall-col">
-                                <img src="assets/images/blog/blog3.jpg" alt="">
-                            </div>
-                            <div class="col-md-4 col-6 gall-col">
-                                <img src="assets/images/blog/blog4.jpg" alt="">
-                            </div>
-                            <div class="col-md-4 col-6 gall-col">
-                                <img src="assets/images/blog/blog5.jpg" alt="">
-                            </div>
-                            <div class="col-md-4 col-6 gall-col">
-                                <img src="assets/images/blog/blog6.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </footer>
-
-     <div class="copy">
-        <div class="container">
-            <a href="https://www.smarteyeapps.com/">2015 &copy; All Rights Reserved | Designed and Developed by Smarteyeapps</a>
-
-            <span>
-                <a><i class="fab fa-github"></i></a>
-                <a><i class="fab fa-google-plus-g"></i></a>
-                <a><i class="fab fa-pinterest-p"></i></a>
-                <a><i class="fab fa-twitter"></i></a>
-                <a><i class="fab fa-facebook-f"></i></a>
-        </span>
-        </div>
-
-    </div>                 
-    
-    
-</body>
-
-<script src="assets/js/jquery-3.2.1.min.js"></script>
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js"></script>
-<script src="assets/plugins/slider/js/owl.carousel.min.js"></script>
-<script src="assets/js/script.js"></script>
-
-</html>
+        </section>
+    @endsection

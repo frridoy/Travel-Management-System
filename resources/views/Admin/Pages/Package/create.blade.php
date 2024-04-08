@@ -89,7 +89,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="image" class="form-label">Image:</label>
-                        <input type="file" class="form-control" id="image" name="image" value="{{ old('image') }}">
+                        <input type="file" class="form-control" id="image" name="image">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>

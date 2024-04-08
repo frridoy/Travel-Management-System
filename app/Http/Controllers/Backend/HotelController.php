@@ -23,7 +23,8 @@ class HotelController extends Controller
        'name'=>'required',
        'type'=>'required',
        'address'=>'required',
-       'price' => 'required|numeric|gt:0',
+       'singlebedprice' => 'required|numeric|gt:0',
+       'doublebedprice' => 'required|numeric|gt:0',
        'number' => 'required|regex:/^01[3-9][0-9]{8}$/|numeric',
       ]);
       if ($validation->fails())
@@ -36,7 +37,8 @@ class HotelController extends Controller
         'name'=>$request->name,
         'type'=>$request->type,
         'address'=>$request->address,
-        'price'=>$request->price,
+        'singlebedprice'=>$request->singlebedprice,
+        'doublebedprice'=>$request->doublebedprice,
         'number'=>$request->number,
 
       ]);
@@ -110,7 +112,8 @@ if ($hotel)
         'name'=>$request->name,
         'type'=>$request->type,
         'address'=>$request->address,
-        'price'=>$request->price,
+        'singlebedprice'=>$request->singlebedprice,
+        'doublebedprice'=>$request->doublebedprice,
         'number'=>$request->number,
     ]);
 }

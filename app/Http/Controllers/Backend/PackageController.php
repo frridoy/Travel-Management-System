@@ -7,7 +7,11 @@ use App\Models\Hotel;
 use App\Models\Package;
 use App\Models\Transport;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
+use Stringable;
+// use Illuminate\Support\Str;
+
 
 class PackageController extends Controller
 {
@@ -47,13 +51,24 @@ class PackageController extends Controller
             return redirect()->back()->withInput();
         }
 
-        $fileName=null;
-        if($request->hasFile('image'))
-        {
-            $file=$request->file('image');
-            $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
-            $file->storeAs('/uploads',$fileName);
+        //  // Initialize $filename variable
+        //   $filename = '';
 
+        // // Initialize $path variable
+        //   $path = '';
+
+
+        $path = null;
+        $filename = null;
+
+        if ($request->has('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            // $filename = Str::uuid()->toString() . '_' . time() . '_' . rand(1000, 9999) . '.' . $extension;
+            $path = 'uploads/package/';
+            $file->move(public_path($path), $filename);
+            // $file->move('$path, $filename');
         }
 
         Package::create([
@@ -66,7 +81,7 @@ class PackageController extends Controller
             'price' => $request->price,
             'spot' => $request->spot,
             'description' => $request->description,
-            'image' => $fileName,
+            'image' => $path . $filename,
             'hotel_id' => $request->hotel_id,
             'transport_id' => $request->transport_id,
 
@@ -79,30 +94,28 @@ class PackageController extends Controller
 
     public function list()
     {
-        $packages = Package::with('hotels','transports')->get();
+        $packages = Package::with('hotels', 'transports')->get();
         return view('Admin.Pages.Package.list', compact('packages'));
     }
 
     public function delete($id)
     {
-        $package=Package::find($id);
-        if($package)
-        {
+        $package = Package::find($id);
+        if ($package) {
             $package->delete();
         }
         notify()->error('Pacakge Trashed Succesfully');
         return redirect()->back();
     }
-    public function trash ()
+    public function trash()
     {
-        $packages=Package::onlyTrashed()->get();
+        $packages = Package::onlyTrashed()->get();
         return view('Admin.Pages.Package.trash', compact('packages'));
     }
     public function restore($id)
     {
-        $package=Package::withTrashed()->find($id);
-        if ( $package)
-        {
+        $package = Package::withTrashed()->find($id);
+        if ($package) {
             $package->restore();
         }
         notify()->success('Pacakge Restored Succesfully');
@@ -110,29 +123,51 @@ class PackageController extends Controller
     }
     public function forceDelete($id)
     {
-        $package=Package::withTrashed()->find($id);
-        if($package)
-        {
+        $package = Package::withTrashed()->find($id);
+        if ($package) {
             $package->forceDelete();
         }
         notify()->error('Pacakge Deleted Succesfully');
         return redirect()->back();
     }
 
-    public function edit ($id)
+    public function edit($id)
     {
-        // $package=Package::find($id);
+
         $package = Package::find($id);
-        return view('Admin.Pages.Package.edit',compact('package'));
+        return view('Admin.Pages.Package.edit', compact('package'));
     }
 
     public function update(Request $request, $id)
     {
-        $package=Package::find($id);
-        if($package)
-        {
+        $package = Package::find($id);
+
+        if ($package)
+         {
+            // Check if a new image is uploaded
+            if ($request->hasFile('image'))
+             {
+                $file = $request->file('image');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . '.' . $extension;
+                $path = 'uploads/package/';
+                $file->move(public_path($path), $filename);
+
+                // Delete old image if it exists
+                if (File::exists($package->image)) {
+                    File::delete($package->image);
+                }
+
+                // Update image field
+                $package->update([
+                        'image' => $path . $filename,
+                    ]);
+            }
+
+
             $package->update([
-                'name' => $request->name,
+                'startingpoint' => $request->startingpoint,
+                'destination' => $request->destination,
                 'pickupdate' => $request->pickupdate,
                 'duration' => $request->duration,
                 'returndate' => $request->returndate,
@@ -140,7 +175,6 @@ class PackageController extends Controller
                 'price' => $request->price,
                 'spot' => $request->spot,
                 'description' => $request->description,
-                // 'image' => $fileName,
 
             ]);
             notify()->success('Package Info Updated Successfully');

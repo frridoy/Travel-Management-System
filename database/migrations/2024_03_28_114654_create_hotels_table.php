@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('type');
             $table->string('address');
-            $table->string('price');
+            $table->string('singlebedprice');
+            $table->string('doublebedprice');
             $table->string('number');
             $table->timestamps();
             $table->softDeletes();

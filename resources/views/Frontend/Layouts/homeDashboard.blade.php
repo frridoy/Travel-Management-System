@@ -103,7 +103,7 @@
 
             <div class="col-md-4">
                 <div class="pac-col">
-                    <img src="/Frontend/assets/images/packages/pack1.jpg" alt="">
+                    <img src="{{asset($package->image)}}" alt="">
                     <div class="packdetail">
                         <h4>{{$package->startingpoint}} ⬌ {{$package->destination}}</h4>
                         <div class="daydet">

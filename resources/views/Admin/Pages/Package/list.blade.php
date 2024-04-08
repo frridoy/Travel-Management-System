@@ -38,9 +38,8 @@
                     <th>Duration</th>
                     <th>Price/p</th>
                     <th>Hotel</th>
-                    {{-- <th>Address</th> --}}
                     <th>Transport</th>
-                    {{-- <th>Image</th> --}}
+                    <th>Image</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -54,15 +53,21 @@
                     <td>{{ $package->duration }}</td>
                     <td>{{ $package->price }}.00 BDT</td>
                     <td>{{ optional($package->hotels)->id }}. {{ optional($package->hotels)->name }} </td>
-                    {{-- <td>{{ optional($package->hotels)->address }} </td> --}}
+
                     <td>{{ optional($package->transports)->id }}. {{ optional($package->transports)->name }}
                     </td>
                     {{-- <td>
-                        <img style="border-radius: 15%" width="70px" src="{{ url('/uploads/' . $package->image) }}" alt="">
+                        <img src="{{asset($package->image)}}" style="width: 70px; height:70px;" alt="img"/>
                     </td> --}}
-                    {{-- <td>
-                        <img style="border-radius: 15%" width="70px" src="{{ asset('uploads/' . $package->image) }}" alt="">
-                    </td> --}}
+
+                    <td>
+                        @if($package->image)
+                            <img src="{{ asset($package->image) }}" style="width: 70px; height: 70px;" alt="img"/>
+                        @else
+                            <img src="{{ asset('path_to_default_image_icon') }}" style="width: 70px; height: 70px;" alt="img_icon"/>
+                        @endif
+                    </td>
+
 <td>
 
     <a href="{{ route('package.delete', $package->id) }}" class="btn btn-warning">

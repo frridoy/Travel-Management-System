@@ -56,7 +56,7 @@
                         @csrf
                         <div class="form-group">
                             <label for="name">Name:</label>
-                            <input type="text" name="name" id="name" class="form-control" required>
+                            <input type="text" value="{{old('name')}}" name="name" id="name" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="type">Type:</label>
@@ -69,15 +69,19 @@
                         </div>
                         <div class="form-group">
                             <label for="address">Address:</label>
-                            <input type="text" name="address" id="address" class="form-control" required>
+                            <input type="text" value="{{old('address')}}" name="address" id="address" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="price">Price:</label>
-                            <input type="number" name="price" id="price" class="form-control" min="1" step="1" required>
+                            <label for="singlebedprice">Single Bed Price:</label>
+                            <input type="number" value="{{old('singlebedroom')}}" name="singlebedprice" id="singlebedprice" class="form-control" placeholder="2 persons in a room" min="1" step="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="doublebedprice">Double Bed Price:</label>
+                            <input type="number" value="{{old('doublebedroom')}}" name="doublebedprice" id="doublebedprice" class="form-control" placeholder="4 persons in a room" min="1" step="1" required>
                         </div>
                         <div class="form-group">
                             <label for="number">Contact Number:</label>
-                            <input type="text" name="number" id="number" class="form-control" pattern="^01[3-9][0-9]{8}$" required>
+                            <input type="text" value="{{old('number')}}" name="number" id="number" class="form-control" pattern="^01[3-9][0-9]{8}$" required>
                             <small class="form-text text-muted">Enter a valid phone number starting with 01(3-9) and rest of the 8 digits.</small>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Submit</button>

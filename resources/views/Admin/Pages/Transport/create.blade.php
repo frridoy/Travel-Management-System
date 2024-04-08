@@ -68,13 +68,11 @@
             </select>
         </div>
 
-        <div class="form-group">
-            <label for="image">Image</label>
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" id="image" value="{{old('iamge')}}" name="image">
-                <label class="custom-file-label" for="image">Choose file</label>
-            </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image:</label>
+            <input type="file" class="form-control" id="image" name="image">
         </div>
+
         <div class="form-group">
             <label for="price">Price</label>
             <div class="input-group">
@@ -88,6 +86,7 @@
             <label for="number">Number</label>
             <input value="{{old('number')}}" type="number" class="form-control" id="number" name="number" placeholder="Enter number">
         </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
@@ -96,6 +95,37 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function previewImage(input) {
+        const file = input.files[0];
+        const label = document.getElementById('fileLabel');
+        const imagePreview = document.getElementById('imagePreview');
+
+        // Display file name
+        label.innerText = file.name;
+
+        // Check if file is an image
+        if (file.type.match('image.*')) {
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                // Create an image element
+                const img = document.createElement('img');
+                img.src = event.target.result;
+                img.classList.add('img-thumbnail');
+                // Clear previous image preview, if any
+                imagePreview.innerHTML = '';
+                // Append the new image preview
+                imagePreview.appendChild(img);
+            }
+
+            reader.readAsDataURL(file);
+        } else {
+            // Clear image preview if file is not an image
+            imagePreview.innerHTML = '';
+        }
+    }
+</script>
 
 </body>
 </html>

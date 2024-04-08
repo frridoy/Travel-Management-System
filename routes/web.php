@@ -7,12 +7,25 @@ use App\Http\Controllers\Backend\HotelController;
 use App\Http\Controllers\Backend\PackageController;
 use App\Http\Controllers\Backend\TransportController;
 use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\Frontend\AbousUsController;
+use App\Http\Controllers\Frontend\AboutUsController;
+use App\Http\Controllers\Frontend\ContactUsController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\OurPackageController;
 use Illuminate\Support\Facades\Route;
 
 
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
+
+//our package
+Route::get('/our-packages',[OurPackageController::class,'ourpackages'])->name('our.packages');
+
+//contactus
+Route::get('/contact-us',[ContactUsController::class,'contactus'])->name('contact.us');
+
+//aboutus
+Route::get('/about-us',[AboutUsController::class,'aboutus'])->name('about.us');
 
 
 Route::group(['prefix' => 'admin'], function () {

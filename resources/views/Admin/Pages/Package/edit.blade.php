@@ -9,8 +9,13 @@
                 <form method="post" action="{{ route('package.update', $package->id) }}" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
-                        <label for="name" class="form-label">Name:</label>
-                        <input type="text" class="form-control" id="name" name="name" value="{{ $package->name }}"
+                        <label for="startingpoint" class="form-label">Starting Point:</label>
+                        <input type="text" class="form-control" id="startingpoint" name="startingpoint" value="{{ $package->startingpoint }}"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="destination" class="form-label"> Destination:</label>
+                        <input type="text" class="form-control" id="destination" name="destination" value="{{ $package->destination }}"
                             required>
                     </div>
 
@@ -60,7 +65,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="image" class="form-label">Image:</label>
-                        <input type="file" class="form-control" id="image" name="image" value="{{ old('image') }}">
+                        <input type="file" class="form-control" id="image" name="image">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Update</button>

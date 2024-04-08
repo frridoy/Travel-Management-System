@@ -38,12 +38,14 @@ class TransportController extends Controller
 
         }
 
+        
+
         Transport::create([
             'name'=>$request->name,
             'type'=>$request->type,
             'destination_id'=>$request->destination_id,
             'price'=>$request->price,
-            'image'=>$request->image,
+            'image'=>$path . $fileName,
             'number'=>$request->number,
 
         ]);
@@ -57,7 +59,7 @@ class TransportController extends Controller
         $transports = Transport::with('destinations')->get();
         return view('Admin.Pages.Transport.list', compact('transports'));
     }
-   
+
 
     public function delete ($id)
     {

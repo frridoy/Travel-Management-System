@@ -36,7 +36,7 @@
                     <th> Bus Name</th>
                     <th>Type</th>
                     <th>Destination</th>
-                    {{-- <th>Image</th> --}}
+                    <th>Image</th>
                     <th>Price (BDT)</th>
                     <th>Contact Number</th>
                     <th>Action</th>
@@ -55,7 +55,14 @@
                         Not Found
                     @endif
                 </td>
-                    {{-- <td>{{ $transports->image }}</td> --}}
+                <td>
+                    {{-- <td> <img src="{{ asset($transport->image) }}" > </td> --}}
+                    @if($transport->image)
+                    <img src="{{ asset($transport->image) }}" style="width: 70px; height: 70px;" alt="img"/>
+                @else
+                    <img src="{{ asset('path_to_default_image_icon') }}" style="width: 70px; height: 70px;" alt="img_icon"/>
+                </td>
+                @endif
                     <td>BDT {{ $transport->price }}</td>
                     <td>{{ $transport->number }}</td>
 
