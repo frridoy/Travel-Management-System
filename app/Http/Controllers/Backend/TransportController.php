@@ -38,7 +38,17 @@ class TransportController extends Controller
 
         }
 
-        
+        $path=null;
+        $fileName=null;
+
+        if($request->has('image'))
+        {
+            $file=$request->file('image');
+            $extention=$file->getClientOriginalExtension();
+            $fileName=time(). '.' .  $extention;
+            $path='uploads/transport/';
+            $file->move(public_path($path), $fileName);
+        }
 
         Transport::create([
             'name'=>$request->name,
