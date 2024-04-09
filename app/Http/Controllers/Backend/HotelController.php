@@ -132,7 +132,9 @@ class HotelController extends Controller
 
 
                 // Delete old image if it exists
-                if ($hotel->image && File::exists(public_path($hotel->image))) {
+
+                if ($hotel->image && File::exists(public_path($hotel->image)))
+                {
                     File::delete(public_path($hotel->image));
                 }
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Destination;
 use App\Models\Transport;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
 class TransportController extends Controller
@@ -126,11 +127,32 @@ class TransportController extends Controller
     $transport=Transport::find($id);
     if($transport)
     {
+        if($request->has('image'))
+        {
+            $file=$request->file('image');
+            $extention=$file->getClientOriginalExtension();
+            $fileName=time(). '.' .  $extention;
+            $path='uploads/transport/';
+            $file->move(public_path($path), $fileName);
+
+            //delete
+
+            if($transport->image && File::exists(public_path($transport->image)))
+            {
+                File::delete(public_path($transport->image));
+            }
+
+            //update
+            $transport->update([
+               'image'=>$path . $fileName,
+            ]);
+        }
+
+
         $transport->update([
             'name'=>$request->name,
             'type'=>$request->type,
             'price'=>$request->price,
-            // 'image'=>$request->image,
             'number'=>$request->number,
         ]);
     }

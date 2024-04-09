@@ -54,13 +54,6 @@
                 <option value="Sleeper Bus" {{ $transport->type == 'Sleeper Bus' ? 'selected' : '' }}>Sleeper Bus</option>
             </select>
         </div>
-        {{-- <div class="form-group">
-            <label for="image">Image</label>
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" id="image" name="image">
-                <label class="custom-file-label" for="image">Choose file</label>
-            </div>
-        </div> --}}
         <div class="form-group">
             <label for="price">Price</label>
             <div class="input-group">
@@ -73,6 +66,10 @@
         <div class="form-group">
             <label for="number">Number</label>
             <input value="{{ $transport->number }}" type="number" class="form-control" id="number" name="number" placeholder="Enter number">
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image:</label>
+            <input type="file" class="form-control" id="image" name="image">
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
