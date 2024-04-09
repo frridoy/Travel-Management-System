@@ -52,7 +52,7 @@
                     <h3 class="text-center mb-0">Hotel Info Edit</h3>
                 </div>
                 <div class="card-body">
-                    <form action="{{route('hotel.update', $hotel->id)}}" method="POST">
+                    <form action="{{route('hotel.update', $hotel->id)}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="name">Name:</label>
@@ -84,6 +84,11 @@
                             <input type="text" name="number" id="number" value="{{$hotel->number}}" class="form-control" pattern="^01[3-9][0-9]{8}$" >
                             <small class="form-text text-muted">Enter a valid phone number starting with 01(3-9) and rest of the 8 digits.</small>
                         </div>
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Image:</label>
+                            <input type="file" class="form-control" id="image" name="image">
+                        </div>
+
                         <button type="submit" class="btn btn-primary btn-block">Update</button>
                     </form>
                 </div>

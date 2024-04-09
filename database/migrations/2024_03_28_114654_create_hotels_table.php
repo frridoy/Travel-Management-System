@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('singlebedprice');
             $table->string('doublebedprice');
+            $table->string('image')->nullable();
             $table->string('number');
             $table->timestamps();
             $table->softDeletes();

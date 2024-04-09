@@ -39,6 +39,7 @@
                     <th>Address</th>
                     <th>Single(BDT)</th>
                     <th>Double(BDT)</th>
+                    <th>Image</th>
                     <th>Contact</th>
                     <th>Action</th>
                 </tr>
@@ -59,6 +60,7 @@
                     {{-- <td>{{ $transports->image }}</td> --}}
                     <td>BDT {{ $hotel->singlebedprice }}</td>
                     <td>BDT {{ $hotel->doublebedprice }}</td>
+                    <td> <img src="{{asset($hotel->image)}}" alt="img"></td>
                     <td>{{ $hotel->number }}</td>
 
                     <td>

@@ -61,14 +61,15 @@ class PackageController extends Controller
         $path = null;
         $filename = null;
 
-        if ($request->has('image')) {
+        if ($request->has('image'))
+        {
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
             // $filename = Str::uuid()->toString() . '_' . time() . '_' . rand(1000, 9999) . '.' . $extension;
             $path = 'uploads/package/';
             $file->move(public_path($path), $filename);
-            // $file->move('$path, $filename');
+
         }
 
         Package::create([
@@ -153,9 +154,14 @@ class PackageController extends Controller
                 $path = 'uploads/package/';
                 $file->move(public_path($path), $filename);
 
-                // Delete old image if it exists
-                if (File::exists($package->image)) {
-                    File::delete($package->image);
+                // // Delete old image if it exists
+                // if (File::exists($package->image))
+                // {
+                //     File::delete($package->image);
+                // }
+
+                if ($package->image && File::exists(public_path($package->image))) {
+                    File::delete(public_path($package->image));
                 }
 
                 // Update image field

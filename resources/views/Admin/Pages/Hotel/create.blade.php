@@ -52,7 +52,7 @@
                     <h3 class="text-center mb-0">Create Hotel</h3>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('hotel.store') }}" method="POST">
+                    <form action="{{ route('hotel.store') }}" method="POST" enctype="multipart/form-data" >
                         @csrf
                         <div class="form-group">
                             <label for="name">Name:</label>
@@ -78,6 +78,10 @@
                         <div class="form-group">
                             <label for="doublebedprice">Double Bed Price:</label>
                             <input type="number" value="{{old('doublebedroom')}}" name="doublebedprice" id="doublebedprice" class="form-control" placeholder="4 persons in a room" min="1" step="1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Image:</label>
+                            <input type="file" class="form-control" id="image" name="image">
                         </div>
                         <div class="form-group">
                             <label for="number">Contact Number:</label>
