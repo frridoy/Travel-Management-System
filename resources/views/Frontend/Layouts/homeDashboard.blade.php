@@ -85,6 +85,7 @@
                             <span><i class="far fa-clock"></i> {{$package->duration}} </span>
                             <b>{{$package->price}} BDT</b>
                         </div>
+
                         <div class="eview-row row no-margin">
                             <ul>
                                 <li><i class="fas fa-star"></i></li>
@@ -93,6 +94,10 @@
                                 <li><i class="fas fa-star"></i></li>
                                 <li><i class="fas fa-star"></i></li>
                             </ul>
+                        </div>
+
+                        <div class="text-center" >
+                            <button class="btn btn-outline-success mt-2 "><a href="{{route('singlepackage.view',$package->id)}}">View The Package</a></button>
                         </div>
                     </div>
                 </div>

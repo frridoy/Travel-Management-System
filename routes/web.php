@@ -33,7 +33,9 @@ Route::get('/about-us',[AboutUsController::class,'aboutus'])->name('about.us');
 Route::get('package/search',[SearchController::class, 'search'])->name('package.search');
 
 
+//single package view
 
+Route::get('/package-view/{id}',[SinglePackageViewController::class, 'packageview'])->name('singlepackage.view');
 
 
 Route::group(['prefix' => 'admin'], function () {
