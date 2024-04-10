@@ -58,36 +58,9 @@
 
 </div>
 
- <!--################### Slider Starts Here #######################--->
 
-<div class="search-container contaienr-fluid">
-   <div class="container">
-       <div class="row search-box">
-           <div class="col-md-3">
-               <select name="" id="" class="form-control">
-                   <option value="">Select Activity</option>
-                   <option value="">City Tours</option>
-                   <option value="">Relaxation Tours</option>
-                   <option value="">Cultral Tours</option>
-               </select>
-           </div>
-            <div class="col-md-3">
-               <select name="" id="" class="form-control">
-                   <option value="">Select Activity</option>
-                   <option value="">City Tours</option>
-                   <option value="">Relaxation Tours</option>
-                   <option value="">Cultral Tours</option>
-               </select>
-           </div>
-            <div class="col-md-3">
-               <input placeholder="Select Date" type="text" class="form-control">
-           </div>
-            <div class="col-md-3">
-               <button class="btn w-100 btn-primary">Search Package</button>
-           </div>
-       </div>
-   </div>
-</div>
+
+
 
 <!--################### Packages Starts Here #######################--->
 

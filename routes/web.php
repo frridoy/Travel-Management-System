@@ -12,6 +12,8 @@ use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\ContactUsController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\OurPackageController;
+use App\Http\Controllers\Frontend\SearchController;
+use App\Http\Controllers\Frontend\SinglePackageViewController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -26,6 +28,12 @@ Route::get('/contact-us',[ContactUsController::class,'contactus'])->name('contac
 
 //aboutus
 Route::get('/about-us',[AboutUsController::class,'aboutus'])->name('about.us');
+
+//search the package
+Route::get('package/search',[SearchController::class, 'search'])->name('package.search');
+
+
+
 
 
 Route::group(['prefix' => 'admin'], function () {
