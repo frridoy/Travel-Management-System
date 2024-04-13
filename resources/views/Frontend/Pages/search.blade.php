@@ -103,6 +103,9 @@
                                             @endfor
                                         </ul>
                                     </div>
+                                    <div class="text-center" >
+                                        <button class="btn btn-outline-success mt-2 "><a href="{{route('singlepackage.view',$package->id)}}">View The Package</a></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
