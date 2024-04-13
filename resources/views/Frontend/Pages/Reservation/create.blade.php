@@ -161,7 +161,7 @@
 
 
                                 <div class="form-group">
-                                    <label for="amount" class="font-weight-bold">Amount</label>
+                                    <label for="amount" class="font-weight-bold"> Total Amount</label>
                                     <input type="text" readonly class="form-control" id="amount"
                                         value="{{$singlepackageview->price}}" name="amount">
                                 </div>
