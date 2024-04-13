@@ -56,8 +56,6 @@
                     <td>HT-{{ $hotel->id }}</td>
                     <td>{{ $hotel->name }}</td>
                     <td>{{ $hotel->type }}</td>
-                    <td>{{ $hotel->address }}</td>
-                    {{-- <td>{{ $transports->image }}</td> --}}
                     <td>BDT {{ $hotel->singlebedprice }}</td>
                     <td>BDT {{ $hotel->doublebedprice }}</td>
                     <td> <img src="{{asset($hotel->image)}}" alt="img"></td>

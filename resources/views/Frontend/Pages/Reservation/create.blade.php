@@ -96,8 +96,8 @@
 
 
 
-                                {{-- <input type="hidden" name="price" value="{{$singlepackageview->price}}">
-                                <input type="hidden" name="code" value="{{$singlepackageview->id}}"> --}}
+                                <input type="hidden" name="price" value="{{$singlepackageview->price}}">
+                                <input type="hidden" name="code" value="{{$singlepackageview->id}}">
 
 
 
@@ -160,24 +160,23 @@
 
 
 
-                                <div class="form-group">
-                                    <label for="amount" class="font-weight-bold"> Total Amount</label>
-                                    <input type="text" readonly class="form-control" id="amount"
-                                        value="{{$singlepackageview->price}}" name="amount">
-                                </div>
-
+<div class="form-group">
+    <label for="amount" class="font-weight-bold"> Total Amount</label>
+    <input type="text" readonly class="form-control" id="amount" name="amount">
+</div>
 
 
                     <button type="submit" class="btn btn-primary btn-block">Payment</button>
 
 
-                            {{-- </form> --}}
+
                         </div>
                     </div>
                 </div>
             </div>
         </form>
     </div>
+
 
 </body>
 

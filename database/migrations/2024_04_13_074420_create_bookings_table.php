@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('chooseroom');
             $table->integer('quantity');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

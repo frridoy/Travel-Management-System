@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\Backend\BookingController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\DestinationController;
 use App\Http\Controllers\Backend\HotelController;
@@ -41,6 +41,7 @@ Route::get('/package-view/{id}',[SinglePackageViewController::class, 'packagevie
 
 Route::get('/reservation-form/{id}',[SinglePackageViewController::class, 'reservation'])->name('reservation.form');
 Route::post('/reservation-form/store',[SinglePackageViewController::class, 'store'])->name('reservation.store');
+
 
 
 
@@ -123,6 +124,12 @@ Route::get('/user/role/list',[UserController::class, 'list'])->name('user_role.l
 
 
 });
+
+
+
+//bookig list from reservation form
+
+Route::get('/package/bookings/list',[BookingController::class, 'list'])->name('bookings.list');
 
 });
 

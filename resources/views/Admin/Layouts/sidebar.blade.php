@@ -70,6 +70,20 @@
             </ul>
         </li>
 
+        <li class="sidebar-list-item">
+            <a class="sidebar-link text-muted" href="#" data-bs-target="#bookingDropdown" role="button" aria-expanded="false" data-bs-toggle="collapse">
+                <svg class="svg-icon svg-icon-md me-3">
+                    <use xlink:href="icons/orion-svg-sprite.71e9f5f2.svg#design-1"> </use>
+                </svg>
+                <span class="sidebar-link-title">Package Booking</span>
+            </a>
+            <ul class="sidebar-menu list-unstyled collapse" id="bookingDropdown">
+                <li class="sidebar-list-item"><a class="sidebar-link text-muted create" href="{{route('bookings.list')}}">Booking List</a></li>
+                {{-- <li class="sidebar-list-item"><a class="sidebar-link text-muted list" href="{{route('user_role.list')}}">Users- List</a></li>
+                <li class="sidebar-list-item"><a class="sidebar-link text-muted list" href="">User- Trash List</a></li> --}}
+            </ul>
+        </li>
+
     </ul>
 
 </div>
