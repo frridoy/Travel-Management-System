@@ -20,4 +20,19 @@ class SinglePackageViewController extends Controller
 
         return view('Frontend.Pages.SinglePackageView.singlepackageview', compact('packages', 'singlepackageview'));
     }
+
+   public function reservation($id)
+   {
+    $singlepackageview= Package::find($id);
+
+    // dd($singlepackageview);
+
+    return view('Frontend.Pages.Reservation.create', compact('singlepackageview'));
+   }
+
+public function store(Request $request)
+{
+    dd($request->all());
+}
+
 }

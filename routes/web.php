@@ -37,6 +37,12 @@ Route::get('package/search',[SearchController::class, 'search'])->name('package.
 
 Route::get('/package-view/{id}',[SinglePackageViewController::class, 'packageview'])->name('singlepackage.view');
 
+//reservation form for booking
+
+Route::get('/reservation-form/{id}',[SinglePackageViewController::class, 'reservation'])->name('reservation.form');
+Route::post('/reservation-form/store',[SinglePackageViewController::class, 'store'])->name('reservation.store');
+
+
 
 Route::group(['prefix' => 'admin'], function () {
 
@@ -81,7 +87,7 @@ Route::get('/package/delete/{id}',[PackageController::class,'delete'])->name('pa
 Route::get('/package/trash',[PackageController::class,'trash'])->name('package.trash');
 Route::get('/package/restore/{id}',[PackageController::class,'restore'])->name('package.restore');
 Route::get('/package/force-delete/{id}',[PackageController::class,'forceDelete'])->name('package.forceDelete');
-Route::get('/package/edit/{id}',[PackageController::class,'edit'])->name('package.edit');
+Route::get('/package/edit/{id}',[PackageController::class,'edit'])->where('id', '[0-9]+')->name('package.edit');
 Route::post('/package/update/{id}',[PackageController::class,'update'])->name('package.update');
 
 

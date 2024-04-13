@@ -136,6 +136,9 @@ class PackageController extends Controller
     {
 
         $package = Package::find($id);
+
+        abort_if(is_null ($package), 404);
+
         return view('Admin.Pages.Package.edit', compact('package'));
     }
 

@@ -92,7 +92,7 @@
             <div class="left-content">
 
                 <img src="{{ asset($singlepackageview->image) }}" class="card-img-top img-fluid" alt="">
-              
+
                     <h2 class="card-title text-danger"> Conditions</h2>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">1. If you wish to cancel your booking after payment is made, you must do so at least 24 hours prior to the pickup date, and you will receive a refund of 80% of the total amount paid.</li>
@@ -115,6 +115,9 @@
                 <p class="text-info fs-3"> You will receive information about your transport seat, hotel room and other details via email.</p>
 
 
+                <a href="{{ route("reservation.form", $singlepackageview->id) }}">
+                    <button type="button" class="btn btn-outline-success btn-block">Booking the Package</button>
+                </a>
 
             </div>
 
