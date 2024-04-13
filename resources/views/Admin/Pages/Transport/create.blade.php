@@ -37,7 +37,7 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container mt-0">
     <h2 class="mb-4">Add New Transport</h2>
     <form action="{{route('transport.store')}}" method="post" enctype="multipart/form-data">
         @csrf

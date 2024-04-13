@@ -9,24 +9,14 @@
     <title>Package List</title>
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    {{-- <style>
-
-        .container {
-            max-width: 800px;
-        }
-        .table-responsive {
-            overflow-x: auto;
-        }
-        th, td {
-            text-align: center;
-            vertical-align: middle;
-        }
-    </style> --}}
 </head>
 <body>
 
-<div class="container mt-5">
+<div class="container mt-0">
+    <a href="{{ route('package.create') }}" class="btn btn-primary">Create Package</a>
+    <a href="{{ route('package.trash') }}" class="btn btn-warning">Trash Packages</a>
     <h2 class="text-center mb-4">Package List</h2>
+
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
             <thead class="thead-dark">
@@ -56,15 +46,12 @@
 
                     <td>{{ optional($package->transports)->id }}. {{ optional($package->transports)->name }}
                     </td>
-                    {{-- <td>
-                        <img src="{{asset($package->image)}}" style="width: 70px; height:70px;" alt="img"/>
-                    </td> --}}
 
                     <td>
                         @if($package->image)
-                            <img src="{{ asset($package->image) }}" style="width: 70px; height: 70px;" alt="img"/>
+                            <img src="{{ asset($package->image) }}" style="width: 70px; height: 70px; border: 1px solid #000; border-radius: 25%;" alt="img"/>
                         @else
-                            <img src="{{ asset('path_to_default_image_icon') }}" style="width: 70px; height: 70px;" alt="img_icon"/>
+                            <img src="{{ asset('path_to_default_image_icon') }}" style="width: 70px; height: 70px; border: 1px solid #000; border-radius: 50%;" alt="img_icon"/>
                         @endif
                     </td>
 

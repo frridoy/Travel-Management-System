@@ -123,15 +123,19 @@ Route::get('/user/role/list',[UserController::class, 'list'])->name('user_role.l
 
 
 
-});
-
-
 
 //bookig list from reservation form
 
 Route::get('/package/bookings/list',[BookingController::class, 'list'])->name('bookings.list');
 
 });
+});
+
+
+
+
+
+
 
 
 

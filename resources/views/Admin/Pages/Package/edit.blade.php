@@ -1,7 +1,7 @@
 @extends('Admin.master')
 @section('content')
 
-<div class="container mt-5">
+<div class="container mt-0">
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <div class="form-container">

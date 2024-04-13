@@ -6,26 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transport trash List</title>
-    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    {{-- <style>
-        /* Additional CSS styles */
-        .container {
-            max-width: 800px;
-        }
-        .table-responsive {
-            overflow-x: auto;
-        }
-        th, td {
-            text-align: center;
-            vertical-align: middle;
-        }
 
-    </style> --}}
 </head>
 <body>
 
-<div class="container mt-5">
+<div class="container mt-0">
+    <a href="{{ route('transport.create') }}" class="btn btn-primary">Info</a>
+
     <h2 class="text-center mb-4">Transport Trash List</h2>
 
     <div class="table-responsive">
@@ -33,9 +21,10 @@
             <thead class="thead-dark">
                 <tr>
                     <th>#</th>
-                    <th> Bus Name</th>
+                    <th>Bus Name</th>
                     <th>Type</th>
-                    {{-- <th>Image</th> --}}
+                    <th>Destination</th>
+                    <th>Image</th>
                     <th>Price (BDT)</th>
                     <th>Contact Number</th>
                     <th>Action</th>
@@ -47,7 +36,20 @@
                     <td>{{ $transport->id }}</td>
                     <td>{{ $transport->name }}</td>
                     <td>{{ $transport->type }}</td>
-                    {{-- <td>{{ $transports->image }}</td> --}}
+                    <td>
+                        @if ($transport->destinations)
+                        {{ optional($transport->destinations)->id }}. {{ optional($transport->destinations)->name }}
+                    @else
+                        Not Found
+                    @endif
+                </td>
+                    <td>
+                        @if($transport->image)
+                            <img src="{{ asset($transport->image) }}" style="width: 70px; height: 70px; border: 1px solid #000; border-radius: 50%;" alt="img"/>
+                        @else
+                            <img src="{{ asset('path_to_default_image_icon') }}" style="width: 70px; height: 70px; border: 1px solid #000; border-radius: 50%;" alt="img_icon"/>
+                        @endif
+                    </td>
                     <td>BDT {{ $transport->price }}</td>
                     <td>{{ $transport->number }}</td>
 

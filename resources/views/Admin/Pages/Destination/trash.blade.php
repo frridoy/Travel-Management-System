@@ -6,26 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destination Trash List</title>
-    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    {{-- <style>
-        /* Additional CSS styles */
-        .container {
-            max-width: 800px;
-        }
-        .table-responsive {
-            overflow-x: auto;
-        }
-        th, td {
-            text-align: center;
-            vertical-align: middle;
-        }
 
-    </style> --}}
 </head>
 <body>
 
-<div class="container mt-5">
+<div class="container mt-0">
+    <a href="{{ route('destination.list') }}" class="btn btn-warning">Info</a>
     <h2 class="text-center mb-4">Destination Trash List</h2>
 
     <div class="table-responsive">
@@ -33,7 +20,7 @@
             <thead class="thead-dark">
                 <tr>
                     <th>#</th>
-                    <th> Destination</th>
+                    <th>Destination</th>
                     <th>Distance</th>
                     <th>Action</th>
                 </tr>
@@ -69,7 +56,7 @@
     </div>
 </div>
 
-<!-- Bootstrap JS and dependencies -->
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

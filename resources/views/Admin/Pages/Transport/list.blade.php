@@ -8,24 +8,13 @@
     <title>Transport List</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    {{-- <style>
-        /* Additional CSS styles */
-        .container {
-            max-width: 800px;
-        }
-        .table-responsive {
-            overflow-x: auto;
-        }
-        th, td {
-            text-align: center;
-            vertical-align: middle;
-        }
 
-    </style> --}}
 </head>
 <body>
 
-<div class="container mt-5">
+<div class="container mt-0">
+    <a href="{{ route('transport.create') }}" class="btn btn-primary">Create</a>
+    <a href="{{ route('transport.trash') }}" class="btn btn-warning">Trash</a>
     <h2 class="text-center mb-4">Transport List</h2>
 
     <div class="table-responsive">
@@ -55,14 +44,14 @@
                         Not Found
                     @endif
                 </td>
-                <td>
-                    {{-- <td> <img src="{{ asset($transport->image) }}" > </td> --}}
-                    @if($transport->image)
-                    <img src="{{ asset($transport->image) }}" style="width: 70px; height: 70px;" alt="img"/>
-                @else
-                    <img src="{{ asset('path_to_default_image_icon') }}" style="width: 70px; height: 70px;" alt="img_icon"/>
-                </td>
-                @endif
+
+                    <td>
+                        @if($transport->image)
+                            <img src="{{ asset($transport->image) }}" style="width: 70px; height: 70px; border: 1px solid #000; border-radius: 50%;" alt="img"/>
+                        @else
+                            <img src="{{ asset('path_to_default_image_icon') }}" style="width: 70px; height: 70px; border: 1px solid #000; border-radius: 50%;" alt="img_icon"/>
+                        @endif
+                    </td>
                     <td>BDT {{ $transport->price }}</td>
                     <td>{{ $transport->number }}</td>
 

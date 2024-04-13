@@ -6,26 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel List</title>
-    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    {{-- <style>
-        /* Additional CSS styles */
-        .container {
-            max-width: 800px;
-        }
-        .table-responsive {
-            overflow-x: auto;
-        }
-        th, td {
-            text-align: center;
-            vertical-align: middle;
-        }
 
-    </style> --}}
 </head>
 <body>
 
-<div class="container mt-5">
+<div class="container mt-0">
+    <a href="{{ route('hotel.create') }}" class="btn btn-primary">Create</a>
+    <a href="{{ route('hotel.trash') }}" class="btn btn-warning">Trash</a>
     <h2 class="text-center mb-4">Hotel List</h2>
 
     <div class="table-responsive">
@@ -56,9 +44,17 @@
                     <td>HT-{{ $hotel->id }}</td>
                     <td>{{ $hotel->name }}</td>
                     <td>{{ $hotel->type }}</td>
+                    <td>{{ $hotel->address }}</td>
                     <td>BDT {{ $hotel->singlebedprice }}</td>
                     <td>BDT {{ $hotel->doublebedprice }}</td>
-                    <td> <img src="{{asset($hotel->image)}}" alt="img"></td>
+                    <td>
+                        @if($hotel->image)
+                            <img src="{{ asset($hotel->image) }}" style="width: 70px; height: 70px; border: 1px solid #000; border-radius: 50%;" alt="img"/>
+                        @else
+                            <img src="{{ asset('path_to_default_image_icon') }}" style="width: 70px; height: 70px; border: 1px solid #000; border-radius: 50%;" alt="img_icon"/>
+                        @endif
+                    </td>
+
                     <td>{{ $hotel->number }}</td>
 
                     <td>
