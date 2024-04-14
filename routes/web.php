@@ -14,6 +14,7 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\OurPackageController;
 use App\Http\Controllers\Frontend\SearchController;
 use App\Http\Controllers\Frontend\SinglePackageViewController;
+use App\Http\Controllers\SslCommerzPaymentController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -41,6 +42,23 @@ Route::get('/package-view/{id}',[SinglePackageViewController::class, 'packagevie
 
 Route::get('/reservation-form/{id}',[SinglePackageViewController::class, 'reservation'])->name('reservation.form');
 Route::post('/reservation-form/store',[SinglePackageViewController::class, 'store'])->name('reservation.store');
+
+
+
+// SSLCOMMERZ Start
+Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
+Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
+
+Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
+Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
+
+Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
+
+Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
+//SSLCOMMERZ END
+
 
 
 

@@ -90,8 +90,10 @@
                     <th>Email</th>
                     <th>Address</th>
                     <th>Person</th>
-                    <th>Amount</th>
                     <th>Room</th>
+                    <th>Payment</th>
+                    <th>Amount</th>
+                    <th>Tran-ID</th>
                 </tr>
             </thead>
             <tbody>
@@ -104,15 +106,30 @@
                     <td>{{ $booking->email }}</td>
                     <td>{{ $booking->address }}</td>
                     <td>{{ $booking->quantity }}</td>
+                    <td>
+                        @if($booking->chooseroom === "Single Bed for 2 persons in a room")
+                            Single Bed
+                        @elseif($booking->chooseroom === "Double Bed for 4 persons in a room")
+                            Double Bed
+                        @endif
+                    </td>
+                    <td>
+                        @if($booking->payment_status === "Pending")
+                            <span class="text-danger">Pending</span>
+                        @elseif($booking->payment_status === "confirm")
+                            <span class="text-success">Confirm</span>
+                        @endif
+                    </td>
                     <td>{{ $booking->amount }}</td>
-                    <td>{{ $booking->chooseroom }}</td>
+                    <td>{{ $booking->transaction_id}}</td>
                 </tr>
                 <?php $totalAmount += $booking->amount; ?>
                 @endforeach
                 <tr>
-                    <td colspan="6" class="text-right"><strong>Total Amount:</strong></td>
-                    <td colspan="2">{{ $totalAmount }}</td>
+                    <td colspan="9" class="text-right"><strong>Total Amount:</strong></td>
+                    <td colspan="2">{{ $totalAmount }} BDT</td>
                 </tr>
+
             </tbody>
         </table>
     </div>
