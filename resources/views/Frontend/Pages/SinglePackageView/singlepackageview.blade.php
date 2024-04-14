@@ -107,6 +107,9 @@
 
                 <p class="card-text"><strong>Destination:</strong> {{ $singlepackageview->destination }} </p>
                 <p class="card-text"><strong>Duration:</strong> {{ $singlepackageview->duration }}</p>
+
+
+
                 <p class="card-text"><strong> Initial Amount:</strong> {{ $singlepackageview->price }} </p>
                 <p class="card-text"><strong>Description:</strong> {{ $singlepackageview->description }}</p>
                 <p class="card-text"><strong>Hotel Type:</strong> {{ $singlepackageview->hotels->type }} </p>

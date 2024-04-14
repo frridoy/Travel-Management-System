@@ -16,14 +16,11 @@ class SinglePackageViewController extends Controller
     {
         $packages = Package::with('transports', 'hotels')->get();
 
-        // dd($packages->all());
-
         $singlepackageview = Package::find($id);
-
-        //  dd ($singlepackageview->hotel_id);
 
         return view('Frontend.Pages.SinglePackageView.singlepackageview', compact('packages', 'singlepackageview'));
     }
+
 
     public function reservation($id)
     {
@@ -35,6 +32,7 @@ class SinglePackageViewController extends Controller
     }
     public function store(Request $request)
     {
+
         // dd($request->all());
 
         $validation = Validator::make($request->all(), [
@@ -85,12 +83,31 @@ class SinglePackageViewController extends Controller
             'amount' => $amount,
             'transaction_id' => date('YmdHis'),
             'payment_status' => 'Pending',
+            'code' => $request->id,
         ]);
+
 
         // dd($request->all());
 
-        // notify()->success('Reservation form Submitted Successfully');
-        // return redirect()->back()->withInput();
+      //start
+    if (!$booking) {
+
+        return redirect()->back()->with('error', 'Failed to create booking.');
+    }
+
+
+    if ($booking->payment_status === 'confirm') {
+
+        $package = Package::where('id', $request->package_id)->first();
+
+
+        if ($package) {
+
+            $package->totalseat -= $request->quantity;
+            $package->save();
+        }
+    }
+    //end
         $this->payment($booking);
     }
 

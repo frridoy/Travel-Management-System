@@ -97,7 +97,7 @@
 
 
                                 <input type="hidden" name="price" value="{{$singlepackageview->price}}">
-                                <input type="hidden" name="code" value="{{$singlepackageview->id}}">
+                                <input type="hidden" name="id" value="{{$singlepackageview->id}}">
 
 
 

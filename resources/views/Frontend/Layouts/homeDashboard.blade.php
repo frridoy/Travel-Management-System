@@ -83,6 +83,7 @@
                             <span><i class="far fa-calendar"></i> {{ date('d M, Y', strtotime($package->pickupdate)) }} at {{ date('h:i A', strtotime($package->pickupdate)) }}</span>
                             <br>
                             <span><i class="far fa-clock"></i> {{$package->duration}} </span>
+
                             <b>{{$package->price}} BDT</b>
                         </div>
 
@@ -99,6 +100,7 @@
                         <div class="text-center" >
                             <button class="btn btn-outline-success mt-2 "><a href="{{route('singlepackage.view',$package->id)}}">View The Package</a></button>
                         </div>
+
                     </div>
                 </div>
             </div>

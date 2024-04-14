@@ -83,8 +83,8 @@
         <table class="table table-bordered table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>SI</th>
-                    {{-- <th>Code</th> --}}
+                    <th>#</th>
+                    <th>Package</th>
                     <th>Name</th>
                     <th>Number</th>
                     <th>Email</th>
@@ -101,6 +101,7 @@
                 @foreach($bookings as $key => $booking)
                 <tr>
                     <th scope="row">{{ $key + 1 }}</th>
+                    <td>TMS- {{ $booking->code}}</td>
                     <td>{{ $booking->name }}</td>
                     <td>{{ $booking->number }}</td>
                     <td>{{ $booking->email }}</td>

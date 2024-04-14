@@ -22,6 +22,7 @@
             <thead class="thead-dark">
                 <tr>
                     <th>#</th>
+                    <th>Code</th>
                     <th>Package</th>
                     <th>Pick</th>
                     <th>Return</th>
@@ -34,9 +35,10 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($packages as $package)
+                @foreach($packages as $key => $package)
                 <tr>
-                    <td>{{ $package->id }}</td>
+                    <td>{{$key+1}}</td>
+                    <td>TMS- {{ $package->id }}</td>
                     <td> {{ $package->startingpoint }} ⬌ {{ $package->destination }}</td>
                     <td>{{ date('d M,Y \a\t g:iA', strtotime($package->pickupdate)) }}</td>
                     <td>{{ date('d M,Y \a\t g:iA', strtotime($package->returndate)) }}</td>

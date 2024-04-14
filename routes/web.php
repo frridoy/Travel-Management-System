@@ -12,6 +12,7 @@ use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\ContactUsController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\OurPackageController;
+use App\Http\Controllers\Frontend\QuickResponceController;
 use App\Http\Controllers\Frontend\SearchController;
 use App\Http\Controllers\Frontend\SinglePackageViewController;
 use App\Http\Controllers\SslCommerzPaymentController;
@@ -43,7 +44,8 @@ Route::get('/package-view/{id}',[SinglePackageViewController::class, 'packagevie
 Route::get('/reservation-form/{id}',[SinglePackageViewController::class, 'reservation'])->name('reservation.form');
 Route::post('/reservation-form/store',[SinglePackageViewController::class, 'store'])->name('reservation.store');
 
-
+// quick responce
+Route::get('/quick-responce',[QuickResponceController::class, 'index'])->name('quick.responce');
 
 // SSLCOMMERZ Start
 Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
