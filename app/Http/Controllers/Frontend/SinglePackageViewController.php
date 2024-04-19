@@ -101,11 +101,7 @@ class SinglePackageViewController extends Controller
         $package = Package::where('id', $request->package_id)->first();
 
 
-        if ($package) {
 
-            $package->totalseat -= $request->quantity;
-            $package->save();
-        }
     }
     //end
         $this->payment($booking);

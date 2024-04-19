@@ -20,8 +20,8 @@
                         <label for="role" class="form-label">User Role:</label>
                         <select class="form-select" id="role" name="role">
                             <option selected disabled value="">Select User Role...</option>
-                            <option>Manager</option>
-                            <option>Accounts Man</option>
+                            <option value="Admin">Admin</option>
+                           
                         </select>
                     </div>
 

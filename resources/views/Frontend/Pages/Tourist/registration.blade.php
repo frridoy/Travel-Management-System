@@ -1,8 +1,8 @@
 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    @notifyCss
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Login</title>
@@ -83,13 +83,17 @@
     </style>
 </head>
 <body>
-<x-notify::notify />
+
 
 <div class="container">
     <div class="login-panel">
-        <h2>Login</h2>
-        <form action="{{ route('admin.login.post') }}" method="post">
+        <h2>Registration</h2>
+        <form action="{{ route('registration.store') }}" method="post" enctype="multipart/form-data">
             @csrf
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" required class="form-control" id="name" name="name" placeholder="Enter your name">
+            </div>
             <div class="form-group">
                 <label for="email">Email address:</label>
                 <input type="text" required class="form-control" id="email" name="email" placeholder="Enter email">
@@ -99,7 +103,7 @@
                 <input type="password" required class="form-control" id="password" name="password"
                        placeholder="Enter password">
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
         </form>
     </div>
 </div>
@@ -107,6 +111,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-@notifyJs
 </body>
 </html>
+

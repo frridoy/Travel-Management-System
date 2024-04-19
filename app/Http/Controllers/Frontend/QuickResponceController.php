@@ -27,7 +27,7 @@ class QuickResponceController extends Controller
                 'question' => 'After payment I want to cancle the booking?',
                 'answer' => 'Yes, You can but 24 hours before the pick up date. Then you will get the refaund of 80% of the money from your total  payable amount. Thank you'
             ],
-            // Add more questions and answers as needed
+           
         ];
 
         return view('Frontend.Pages.Responce.quick', compact('questions'));

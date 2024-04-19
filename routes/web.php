@@ -15,12 +15,34 @@ use App\Http\Controllers\Frontend\OurPackageController;
 use App\Http\Controllers\Frontend\QuickResponceController;
 use App\Http\Controllers\Frontend\SearchController;
 use App\Http\Controllers\Frontend\SinglePackageViewController;
+use App\Http\Controllers\Frontend\TouristController;
 use App\Http\Controllers\SslCommerzPaymentController;
 use Illuminate\Support\Facades\Route;
 
 
 
+
 Route::get('/', [HomeController::class, 'home'])->name('home');
+
+//tourist registration
+
+Route::get('/registration',[TouristController::class, 'registration'])->name('registration');
+Route::post('/registration',[TouristController::class, 'store'])->name('registration.store');
+
+//tourist login
+
+Route::get('/login',[TouristController::class, 'login'])->name('tourist.login');
+Route::post('/login',[TouristController::class,'doLogin'])->name('tourist.do.login');
+
+
+////tourist logout
+
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('/logout',[TouristController::class, 'logout'])->name('tourist.logout');
+});
+
+
+
 
 //our package
 Route::get('/our-packages',[OurPackageController::class,'ourpackages'])->name('our.packages');
@@ -75,6 +97,7 @@ Route::post('/login/store', [UserController::class, 'loginPost'])->name('admin.l
 
 
 Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware'=>'CheckAdmin'], function(){
 
 
 //below all routes if I want to visit I have to login first
@@ -148,6 +171,7 @@ Route::get('/user/role/list',[UserController::class, 'list'])->name('user_role.l
 
 Route::get('/package/bookings/list',[BookingController::class, 'list'])->name('bookings.list');
 
+});
 });
 });
 

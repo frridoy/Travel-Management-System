@@ -1,8 +1,8 @@
 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    @notifyCss
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Login</title>
@@ -83,12 +83,12 @@
     </style>
 </head>
 <body>
-<x-notify::notify />
+
 
 <div class="container">
     <div class="login-panel">
         <h2>Login</h2>
-        <form action="{{ route('admin.login.post') }}" method="post">
+        <form action="{{ route('tourist.do.login') }}" method="post">
             @csrf
             <div class="form-group">
                 <label for="email">Email address:</label>
@@ -107,6 +107,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-@notifyJs
 </body>
 </html>
+
