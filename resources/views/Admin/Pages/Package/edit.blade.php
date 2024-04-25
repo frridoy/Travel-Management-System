@@ -43,11 +43,7 @@
                         value="{{ $package->duration }}" readonly>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="totalseat" class="form-label">Total Seats:</label>
-                        <input type="number" class="form-control" id="totalseat" name="totalseat"
-                        value="{{ $package->totalseat }}" required>
-                    </div>
+                   
                     <div class="mb-3">
                         <label for="price" class="form-label">Price:</label>
                         <input type="number" class="form-control" id="price" name="price"value="{{ $package->price }}"

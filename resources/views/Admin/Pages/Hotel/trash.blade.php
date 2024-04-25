@@ -38,6 +38,8 @@
                     <th>Address</th>
                     <th>Single</th>
                     <th>Double </th>
+                    <th>Single Room</th>
+                    <th>Double Room </th>
                     <th>Contact</th>
                     <th> Image</th>
                     <th>Action</th>
@@ -52,6 +54,8 @@
                     <td>{{ $hotel->address }}</td>
                     <td>BDT {{ $hotel->singlebedprice }}</td>
                     <td>BDT {{ $hotel->doublebedprice }}</td>
+                    <td> {{ $hotel->singlebedseat }}</td>
+                    <td> {{ $hotel->doublebedseat }}</td>
                     <td>{{ $hotel->number }}</td>
                     <td>
                         @if($hotel->image)

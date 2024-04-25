@@ -45,9 +45,10 @@ class SinglePackageViewController extends Controller
             'quantity' => 'required|numeric|gt:0',
         ]);
 
-        if ($validation->fails()) {
-            notify()->error($validation->getMessageBag());
-            return redirect()->back();
+        if ($validation->fails())
+        {
+            // notify()->error($validation->getMessageBag());
+            return redirect()->back()->withInput()->withErrors($validation);
         }
 
         $fileName = null;
@@ -64,7 +65,8 @@ class SinglePackageViewController extends Controller
         $roomType = $request->chooseroom;
         $baseAmount = $request->price * $request->quantity;
 
-        if ($roomType == "Single Bed for 2 persons in a room") {
+        if ($roomType == "Single Bed for 2 persons in a room")
+         {
             $amount = $baseAmount + 1000 * $request->quantity;
         } else {
             $amount = $baseAmount;
@@ -74,6 +76,7 @@ class SinglePackageViewController extends Controller
 
        $booking= Booking::create([
             'name' => $request->name,
+            'tourist_id'=>auth()->user()->id,
             'email' => $request->email,
             'number' => $request->number,
             'address' => $request->address,
@@ -84,6 +87,8 @@ class SinglePackageViewController extends Controller
             'transaction_id' => date('YmdHis'),
             'payment_status' => 'Pending',
             'code' => $request->id,
+            'destination' => $request->destination,
+            'pickupdate' => $request->pickupdate,
         ]);
 
 
@@ -99,8 +104,6 @@ class SinglePackageViewController extends Controller
     if ($booking->payment_status === 'confirm') {
 
         $package = Package::where('id', $request->package_id)->first();
-
-
 
     }
     //end

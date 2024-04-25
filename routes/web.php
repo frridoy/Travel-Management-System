@@ -83,6 +83,10 @@ Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 //SSLCOMMERZ END
 
+//tourist view hid=s on booking info
+
+Route::get('/tourist/booking/{id}',[TouristController::class, 'touristBooking'])->name('tourist.booking');
+Route::post('/cancel-booking/{id}', [TouristController::class, 'cancel'])->name('cancel.booking');
 
 
 
@@ -157,6 +161,8 @@ Route::get('/destination/delete/{id}',[DestinationController::class,'delete'])->
 Route::get('/destination/trash',[DestinationController::class,'trash'])->name('destination.trash');
 Route::get('/destination/restore/{id}',[DestinationController::class,'restore'])->name('destination.restore');
 Route::get('/destination/force-delete/{id}',[DestinationController::class,'forceDelete'])->name('destination.forceDelete');
+Route::get('/destination/edit/{id}',[DestinationController::class,'edit'])->name('destination.edit');
+Route::post('/destination/update/{id}',[DestinationController::class,'update'])->name('destination.update');
 
 
 //User Role
@@ -170,6 +176,11 @@ Route::get('/user/role/list',[UserController::class, 'list'])->name('user_role.l
 //bookig list from reservation form
 
 Route::get('/package/bookings/list',[BookingController::class, 'list'])->name('bookings.list');
+Route::get('/refund/{id}', [BookingController::class, 'refund'])->name('refund');
+
+//admin booking search
+
+Route::get('/tourist/booking/search',[BookingController::class, 'search'])->name('bookings.search');
 
 });
 });

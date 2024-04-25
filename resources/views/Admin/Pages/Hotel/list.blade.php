@@ -27,6 +27,8 @@
                     <th>Address</th>
                     <th>Single(BDT)</th>
                     <th>Double(BDT)</th>
+                    <th>Single Room</th>
+                    <th>Double Room</th>
                     <th>Image</th>
                     <th>Contact</th>
                     <th>Action</th>
@@ -47,6 +49,8 @@
                     <td>{{ $hotel->address }}</td>
                     <td>BDT {{ $hotel->singlebedprice }}</td>
                     <td>BDT {{ $hotel->doublebedprice }}</td>
+                    <td> {{ $hotel->singlebedseat }}</td>
+                    <td> {{ $hotel->doublebedseat }}</td>
                     <td>
                         @if($hotel->image)
                             <img src="{{ asset($hotel->image) }}" style="width: 70px; height: 70px; border: 1px solid #000; border-radius: 50%;" alt="img"/>

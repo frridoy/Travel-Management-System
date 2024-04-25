@@ -67,7 +67,7 @@
 <section class="top-packages container-fluid">
     <div class="container">
         <div class="session-title row">
-            <h2>Top Packages</h2>
+            <h2>Best Packages</h2>
             <p>There are many variations of passages of Lorem Ipsum available form</p>
         </div>
         <div class="pack-row row">

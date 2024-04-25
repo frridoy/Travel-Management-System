@@ -43,8 +43,8 @@
                             <span style="font-size: 0.9rem;"><i class="fas fa-trash"></i></span>
 
                         </a>
-                        {{-- <a href="{{ route('transport.edit', $transport->id) }}" class="btn btn-warning">
-                            <span style="font-size: 0.9rem;"><i class="fas fa-edit"></i></span> --}}
+                        <a href="{{ route('destination.edit', $destination->id) }}" class="btn btn-warning">
+                            <span style="font-size: 0.9rem;"><i class="fas fa-edit"></i></span>
 
                         </a>
                     </td>

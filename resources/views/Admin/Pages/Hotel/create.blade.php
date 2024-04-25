@@ -88,6 +88,14 @@
                             <input type="text" value="{{old('number')}}" name="number" id="number" class="form-control" pattern="^01[3-9][0-9]{8}$" required>
                             <small class="form-text text-muted">Enter a valid phone number starting with 01(3-9) and rest of the 8 digits.</small>
                         </div>
+                        <div class="form-group">
+                            <label for="singlebedseat"> No of Single Bed Room:</label>
+                            <input type="number" value="{{old('singlebedseat',1)}}" name="singlebedseat" id="singlebedseat" class="form-control" placeholder="Double bed total room" min="1" step="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="doublebedseat">No of Double Bed Room:</label>
+                            <input type="number" value="{{old('doublebedseat',1)}}" name="doublebedseat" id="doublebedseat" class="form-control" placeholder="Double bed total room" min="1" step="1" required>
+                        </div>
                         <button type="submit" class="btn btn-primary btn-block">Submit</button>
                     </form>
                 </div>

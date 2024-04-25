@@ -28,6 +28,8 @@
                     <th>Image</th>
                     <th>Price (BDT)</th>
                     <th>Contact Number</th>
+                    <th>No Vehicles</th>
+                    <th>Total Seat</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -54,6 +56,8 @@
                     </td>
                     <td>BDT {{ $transport->price }}</td>
                     <td>{{ $transport->number }}</td>
+                    <td>{{ $transport->totalvehicles }}</td>
+                    <td>{{ $transport->totalseat }}</td>
 
                     <td>
                         <a href="{{ route('transport.delete', $transport->id) }}" class="btn btn-warning">

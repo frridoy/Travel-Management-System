@@ -24,6 +24,12 @@ class DestinationController extends Controller
              'distance'=>'nullable|numeric|gt:0'
         ]);
 
+        if($validate->fails())
+        {
+            notify()->error($validate->getMessageBag());
+            return redirect()->back();
+        }
+
         Destination::create([
 
             'name'=>$request->name,
@@ -38,6 +44,7 @@ class DestinationController extends Controller
     {
 
         //pagination
+
         $destinations=Destination::paginate(4);
 
         return view('Admin.Pages.Destination.list', compact('destinations'));
@@ -80,6 +87,27 @@ class DestinationController extends Controller
         }
         notify()->error('Destination Info Deleted Successfuly');
         return redirect()->back();
+    }
+
+    public function edit($id)
+    {
+        $destionation= Destination::find($id);
+        return view('Admin.Pages.Destination.edit', compact('destionation'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $destionation= Destination::find($id);
+        if( $destionation)
+        {
+            $destionation->update([
+                'name'=>$request->name,
+                'distance'=>$request->distance,
+            ]);
+
+            notify()->success('Destination Info Succesfully Updated');
+            return redirect()->route('destination.list');
+        }
     }
 }
 

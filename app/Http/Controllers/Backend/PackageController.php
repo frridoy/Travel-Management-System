@@ -33,7 +33,6 @@ class PackageController extends Controller
             'pickupdate' => 'required|date|after_or_equal:today',
             'returndate' => 'required|date|after_or_equal:pickupdate',
             'duration' => 'required|string|max:255',
-            'totalseat' => 'required|integer|min:1',
             'price' => 'required|integer|min:1',
             'spot' => 'required|string|max:255',
             'description' => 'nullable|string',
@@ -50,12 +49,6 @@ class PackageController extends Controller
             notify()->error($validation->getMessageBag());
             return redirect()->back()->withInput();
         }
-
-        //  // Initialize $filename variable
-        //   $filename = '';
-
-        // // Initialize $path variable
-        //   $path = '';
 
 
         $path = null;
@@ -78,7 +71,6 @@ class PackageController extends Controller
             'pickupdate' => $request->pickupdate,
             'duration' => $request->duration,
             'returndate' => $request->returndate,
-            'totalseat' => $request->totalseat,
             'price' => $request->price,
             'spot' => $request->spot,
             'description' => $request->description,
@@ -157,12 +149,6 @@ class PackageController extends Controller
                 $path = 'uploads/package/';
                 $file->move(public_path($path), $filename);
 
-                // // Delete old image if it exists
-                // if (File::exists($package->image))
-                // {
-                //     File::delete($package->image);
-                // }
-
                 if ($package->image && File::exists(public_path($package->image))) {
                     File::delete(public_path($package->image));
                 }
@@ -180,7 +166,6 @@ class PackageController extends Controller
                 'pickupdate' => $request->pickupdate,
                 'duration' => $request->duration,
                 'returndate' => $request->returndate,
-                'totalseat' => $request->totalseat,
                 'price' => $request->price,
                 'spot' => $request->spot,
                 'description' => $request->description,

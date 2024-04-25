@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Booking;
+use App\Models\Package;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -69,5 +71,31 @@ class TouristController extends Controller
         auth()->logout();
         // notify()->success('Logout Success.');
         return redirect()->route('home');
+    }
+
+    //my booking
+    public function touristBooking($id)
+    {
+        $bookings=Booking::where('tourist_id', $id)->get();
+        return view('Frontend.Pages.Tourist.mybooking', compact('bookings'));
+    }
+
+
+    public function cancel($id)
+    {
+        // Find the booking by ID
+        $booking = Booking::find($id);
+
+        // Check if the booking exists
+        if (!$booking)
+        {
+            return back()->with('error', 'Booking not found.');
+        }
+
+        // Update the booking status to 'canceled'
+        $booking->status = 'canceled';
+        $booking->save();
+
+        return back()->with('success', 'Booking canceled successfully.');
     }
 }

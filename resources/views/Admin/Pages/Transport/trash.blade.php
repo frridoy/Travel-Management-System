@@ -27,6 +27,8 @@
                     <th>Image</th>
                     <th>Price (BDT)</th>
                     <th>Contact Number</th>
+                    <th>No Of Vehicles</th>
+                    <th>No of Seats</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -52,6 +54,8 @@
                     </td>
                     <td>BDT {{ $transport->price }}</td>
                     <td>{{ $transport->number }}</td>
+                    <td>{{ $transport->totalvehicles }}</td>
+                    <td>{{ $transport->totalseat }}</td>
 
                     <td>
                         <a href="{{ route('transport.restore', $transport->id) }}" class="btn btn-success">

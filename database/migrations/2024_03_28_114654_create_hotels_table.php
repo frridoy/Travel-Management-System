@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('address');
             $table->string('singlebedprice');
             $table->string('doublebedprice');
+            $table->string('singlebedseat');
+            $table->string('doublebedseat');
             $table->string('image')->nullable();
             $table->string('number');
             $table->timestamps();

@@ -18,7 +18,6 @@ return new class extends Migration
             $table->dateTime('pickupdate');
             $table->string('duration');
             $table->dateTime('returndate');
-            $table->string('totalseat');
             $table->string('price');
             $table->string('spot');
             $table->text('description')->nullable();

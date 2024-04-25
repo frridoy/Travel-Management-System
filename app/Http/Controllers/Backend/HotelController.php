@@ -28,6 +28,8 @@ class HotelController extends Controller
             'address' => 'required',
             'singlebedprice' => 'required|numeric|gt:0',
             'doublebedprice' => 'required|numeric|gt:0',
+            'singlebedseat' => 'required|numeric|gt:0',
+            'doublebedseat' => 'required|numeric|gt:0',
             'image' => 'nullable|mimes:jpeg,png,jpg,gif',
             'number' => 'required|regex:/^01[3-9][0-9]{8}$/|numeric',
         ]);
@@ -54,6 +56,8 @@ class HotelController extends Controller
             'address' => $request->address,
             'singlebedprice' => $request->singlebedprice,
             'doublebedprice' => $request->doublebedprice,
+            'singlebedseat' => $request->singlebedseat,
+            'doublebedseat' => $request->doublebedseat,
             'number' => $request->number,
             'image' => $path . $fileName,
 
@@ -151,6 +155,8 @@ class HotelController extends Controller
                 'address' => $request->address,
                 'singlebedprice' => $request->singlebedprice,
                 'doublebedprice' => $request->doublebedprice,
+                'singlebedseat' => $request->singlebedseat,
+                'doublebedseat' => $request->doublebedseat,
                 'number' => $request->number,
             ]);
         }
@@ -158,3 +164,5 @@ class HotelController extends Controller
         return redirect()->route('hotel.list');
     }
 }
+
+

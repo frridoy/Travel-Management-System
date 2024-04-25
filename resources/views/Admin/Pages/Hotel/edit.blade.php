@@ -67,6 +67,16 @@
                                 <option value="5 Star AC Room" {{ $hotel->type == '5 Star AC Room' ? 'selected' : '' }}>5 star AC room</option>
                             </select>
                         </div>
+                        
+                        <div class="form-group">
+                            <label for="singlebedseat">No Single Bed Room:</label>
+                            <input type="number" value="{{$hotel->singlebedseat}}" name="singlebedseat" id="singlebedseat" class="form-control" placeholder="Double bed total room" min="1" step="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="doublebedseat">No Double Bed Room:</label>
+                            <input type="number" value="{{$hotel->doublebedseat}}" name="doublebedseat" id="doublebedseat" class="form-control" placeholder="Double bed total room" min="1" step="1" required>
+                        </div>
+
                         <div class="form-group">
                             <label for="address">Address:</label>
                             <input type="text" name="address" value="{{$hotel->address}}" id="address" class="form-control" >
@@ -88,6 +98,7 @@
                             <label for="image" class="form-label">Image:</label>
                             <input type="file" class="form-control" id="image" name="image">
                         </div>
+
 
                         <button type="submit" class="btn btn-primary btn-block">Update</button>
                     </form>

@@ -27,6 +27,8 @@ class TransportController extends Controller
             'price'=>'required|numeric|gt:0',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'number'=>'required|regex:/^01[3-9][0-9]{8}$/|numeric',
+            'totalvehicles'=>'required|gt:0',
+            'totalseat'=>'required|gt:0',
 
         ]);
 
@@ -58,6 +60,8 @@ class TransportController extends Controller
             'price'=>$request->price,
             'image'=>$path . $fileName,
             'number'=>$request->number,
+            'totalvehicles'=>$request->totalvehicles,
+            'totalseat'=>$request->totalseat,
 
         ]);
 
@@ -154,6 +158,9 @@ class TransportController extends Controller
             'type'=>$request->type,
             'price'=>$request->price,
             'number'=>$request->number,
+            'totalvehicles'=>$request->totalvehicles,
+            'totalseat'=>$request->totalseat,
+
         ]);
     }
     notify()->success('Transport Info Updated Succesfully');

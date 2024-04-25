@@ -81,15 +81,19 @@
                         <!-- Profile Icon with Dropdown -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-user-circle fa-lg"></i> <!-- Assuming you're using Font Awesome for icons and setting size to large (fa-lg) -->
+                                <i class="fas fa-user-circle fa-lg"></i>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="profileDropdown">
                                 @guest
                                     <a class="dropdown-item" href="{{ route('registration') }}">Registration</a>
                                     <a class="dropdown-item" href="{{ route('tourist.login') }}">Login</a>
                                 @endguest
+
                                 @auth
                                     <a class="dropdown-item" href="{{ route('tourist.logout') }}">Logout</a>
+
+                                    <a class="dropdown-item" href="{{ route('tourist.booking', auth()->user()->id) }}">My Booking</a>
+
                                 @endauth
                             </div>
                         </li>
@@ -100,5 +104,3 @@
          </div>
      </div>
 </header>
-
-

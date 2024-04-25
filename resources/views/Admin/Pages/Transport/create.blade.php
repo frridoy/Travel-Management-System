@@ -83,6 +83,14 @@
             </div>
         </div>
         <div class="form-group">
+            <label for="totalvehicles">No Of Vehicles</label>
+            <input value="{{old('totalvehicles', 1)}}" type="number" class="form-control" id="totalvehicles" name="totalvehicles" placeholder="Enter Total No of Vehicles">
+        </div>
+        <div class="form-group">
+            <label for="totalseat">No of Seats</label>
+            <input value="{{old('totalseat',1 )}}" type="number" class="form-control" id="totalseat" name="totalseat" placeholder="Enter Total No of Vehicles">
+        </div>
+        <div class="form-group">
             <label for="number">Number</label>
             <input value="{{old('number')}}" type="number" class="form-control" id="number" name="number" placeholder="Enter number">
         </div>

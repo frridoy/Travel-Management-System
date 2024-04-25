@@ -62,6 +62,14 @@
             </div>
         </div>
         <div class="form-group">
+            <label for="totalvehicles">No Of Vehicles</label>
+            <input  type="number" value="{{ $transport->totalvehicles }}" class="form-control" id="totalvehicles" name="totalvehicles" placeholder="Enter Total No of Vehicles">
+        </div>
+        <div class="form-group">
+            <label for="totalseat">No of Seats</label>
+            <input  type="number" value="{{ $transport->totalseat}}" class="form-control" id="totalseat" name="totalseat" placeholder="Enter Total No of Vehicles">
+        </div>
+        <div class="form-group">
             <label for="number">Number</label>
             <input value="{{ $transport->number }}" type="number" class="form-control" id="number" name="number" placeholder="Enter number">
         </div>

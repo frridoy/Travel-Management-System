@@ -53,19 +53,17 @@
                         </div>
 
                         <div class="card-body">
-                            {{-- <form action="" method="" enctype="multipart/form-data">
-                                @csrf --}}
 
                                 <div class="form-group">
                                     <label for="name" class="font-weight-bold">Name</label>
-                                    <input type="name" required name="name" class="form-control" id="name"
-                                        placeholder="Enter your Name">
+                                    <input type="name" value="{{old('name')}}" required name="name" class="form-control"
+                                        id="name" placeholder="Enter your Name">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="email" class="font-weight-bold">Email</label>
-                                    <input type="email" required name="email" class="form-control" id="email"
-                                        placeholder="Enter your email">
+                                    <input type="email" value="{{old('email')}}" required name="email"
+                                        class="form-control" id="email" placeholder="Enter your email">
                                 </div>
 
                                 <div class="form-group">
@@ -76,8 +74,9 @@
                                                 <i class="fas fa-phone"></i>
                                             </span>
                                         </div>
-                                        <input type="tel" pattern="[0-9]{1,13}" name="number" required
-                                            class="form-control" id="contact" placeholder="Enter your contact number">
+                                        <input type="tel" value="{{old('number')}}" pattern="[0-9]{1,13}" name="number"
+                                            required class="form-control" id="contact"
+                                            placeholder="Enter your contact number">
                                     </div>
                                 </div>
 
@@ -85,8 +84,9 @@
                                 <div class="form-group">
                                     <label for="address" class="font-weight-bold">Address</label>
                                     <textarea class="form-control" required name="address" id="address" rows="1"
-                                        placeholder="Enter your address"></textarea>
+                                        placeholder="Enter your address">{{ old('address') }}</textarea>
                                 </div>
+
 
                                 <div class="form-group">
                                     <label for="image" class="font-weight-bold">Image</label>
@@ -98,6 +98,8 @@
 
                                 <input type="hidden" name="price" value="{{$singlepackageview->price}}">
                                 <input type="hidden" name="id" value="{{$singlepackageview->id}}">
+                                <input type="hidden" name="destination" value="{{$singlepackageview->destination}}">
+                                <input type="hidden" name="pickupdate" value="{{$singlepackageview->pickupdate}}">
 
 
 
@@ -105,10 +107,9 @@
                                 <div class="form-group">
                                     <label for="quantity" class="font-weight-bold">Quantity</label>
                                     <div class="input-group">
-                                        <input type="number" value="1" required name="quantity"
+                                        <input type="number" value="{{old('quantity', 1)}}" required name="quantity"
                                             class="form-control border-0 bg-light" id="quantity"
-                                            placeholder="Enter quantity" aria-describedby="quantity-addon" min="1"
-                                        >
+                                            placeholder="Enter quantity" aria-describedby="quantity-addon" min="1">
                                         <div class="input-group-append">
                                             <span class="input-group-text bg-primary text-white"
                                                 id="quantity-addon">Person(s)</span>
@@ -123,12 +124,20 @@
                                     <div class="input-group">
                                         <select name="chooseroom" required
                                             class="custom-select form-control border-0 bg-light" id="roomNumber">
-                                            <option selected disabled>Select Room...1000 BDT will be add if two person in a room</option>
+                                            <option selected disabled>Select Room...1000 BDT will be add if two person
+                                                in a room</option>
                                             <option>Single Bed for 2 persons in a room</option>
                                             <option>Double Bed for 4 persons in a room</option>
 
                                         </select>
                                     </div>
+                                    <span class="text-warning">
+                                        @error('chooseroom')
+
+                                        {{$message}}
+
+                                        @enderror
+                                    </span>
                                 </div>
 
 
@@ -160,13 +169,13 @@
 
 
 
-<div class="form-group">
-    <label for="amount" class="font-weight-bold"> Total Amount</label>
-    <input type="text" readonly class="form-control" id="amount" name="amount">
-</div>
+                                <div class="form-group">
+                                    <label for="amount" class="font-weight-bold"> Total Amount</label>
+                                    <input type="text" readonly class="form-control" id="amount" name="amount">
+                                </div>
 
 
-                    <button type="submit" class="btn btn-primary btn-block">Payment</button>
+                                <button type="submit" class="btn btn-primary btn-block">Payment</button>
 
 
 
@@ -182,5 +191,4 @@
 
 </html>
 @endsection
-
 
