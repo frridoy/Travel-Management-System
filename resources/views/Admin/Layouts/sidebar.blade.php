@@ -78,9 +78,9 @@
                 <span class="sidebar-link-title">Booking</span>
             </a>
             <ul class="sidebar-menu list-unstyled collapse" id="bookingDropdown">
-                <li class="sidebar-list-item"><a class="sidebar-link text-muted create" href="{{route('bookings.list')}}">List</a></li>
-                {{-- <li class="sidebar-list-item"><a class="sidebar-link text-muted list" href="{{route('user_role.list')}}">Users- List</a></li>
-                <li class="sidebar-list-item"><a class="sidebar-link text-muted list" href="">User- Trash List</a></li> --}}
+                <li class="sidebar-list-item"><a class="sidebar-link text-muted create" href="{{route('bookings.list')}}"> Confirmed- List</a></li>
+                <li class="sidebar-list-item"><a class="sidebar-link text-muted list" href="{{route('bookings.pendinglist')}}">Pending- List</a></li>
+                {{-- <li class="sidebar-list-item"><a class="sidebar-link text-muted list" href="">User- Trash List</a></li> --}}
             </ul>
         </li>
 

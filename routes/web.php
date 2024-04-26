@@ -175,8 +175,11 @@ Route::get('/user/role/list',[UserController::class, 'list'])->name('user_role.l
 
 //bookig list from reservation form
 
-Route::get('/package/bookings/list',[BookingController::class, 'list'])->name('bookings.list');
+Route::get('/package/bookings/confirm-list',[BookingController::class, 'list'])->name('bookings.list');
+
 Route::get('/refund/{id}', [BookingController::class, 'refund'])->name('refund');
+
+Route::get('/package/bookings/pending-list',[BookingController::class, 'pendingList'])->name('bookings.pendinglist');
 
 //admin booking search
 

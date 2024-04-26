@@ -52,4 +52,11 @@ class BookingController extends Controller
         return view('Admin.Pages.Booking.search', compact('bookings'));
     }
 
+    public function pendingList()
+    {
+            $bookings=Booking::all();
+
+        return view('Admin.Pages.Booking.pendinglist', compact('bookings'));
+    }
+
 }

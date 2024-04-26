@@ -228,7 +228,7 @@
     <button class="btn btn-success">Search</button>
   </form> --}}
 
-    <h2 class="text-center mb-0">Booking List</h2>
+    <h2 class="text-center mb-0"> Confirmed Booking List</h2>
 
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
