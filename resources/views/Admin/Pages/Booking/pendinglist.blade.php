@@ -1,6 +1,4 @@
 
-
-
 @extends('Admin.master')
 @section('content')
 <!DOCTYPE html>

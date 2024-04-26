@@ -44,6 +44,7 @@ class BookingController extends Controller
             $bookings->where(function ($query) use ($searchTerm) {
                 $query->where('name', 'LIKE', '%' . $searchTerm . '%')
                     ->orWhere('id', 'LIKE', '%' . $searchTerm . '%')
+                    ->orWhere('destination', 'LIKE', '%' . $searchTerm . '%')
                     ->orWhere('transaction_id', 'LIKE', '%' . $searchTerm . '%')
                     ->orWhere('payment_status', 'LIKE', '%' . $searchTerm . '%');
             });

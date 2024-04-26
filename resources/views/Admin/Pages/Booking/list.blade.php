@@ -237,8 +237,8 @@
                     <th>#</th>
                     <th>Package</th>
                     <th>Name</th>
-                    {{-- <th>Number</th>
-                    <th>Email</th>
+                    <th>Destination</th>
+                    {{-- <th>Email</th>
                     <th>Address</th> --}}
                     <th>Person</th>
                     <th>Room</th>
@@ -257,8 +257,8 @@
                     <th scope="row">{{ $key + 1 }}</th>
                     <td>TMS- {{ $booking->code}}</td>
                     <td>{{ $booking->name }}</td>
-                    {{-- <td>{{ $booking->number }}</td>
-                    <td>{{ $booking->email }}</td>
+                    <td>{{ $booking->destination }}</td>
+                    {{-- <td>{{ $booking->email }}</td>
                     <td>{{ $booking->address }}</td> --}}
                     <td>{{ $booking->quantity }}</td>
                     <td>

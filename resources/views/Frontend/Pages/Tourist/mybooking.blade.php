@@ -486,7 +486,7 @@
                     <th>Person</th>
                     <th>Room</th>
                     <th>Payment</th>
-                    <th>Amount</th>
+                    <th>Amount (BDT)</th>
                     <th>Tran-ID</th>
                     <th>Pickupdate</th>
                     <th>Action</th> <!-- Added Action column -->
@@ -516,8 +516,23 @@
                         @endif
                     </td>
                     <td>{{ $booking->amount }}</td>
-                    <td>{{ $booking->transaction_id}}</td>
-                    <td>{{ $booking->pickupdate}}</td>
+             <td>
+                    @if($booking->payment_status === "Pending")
+                    <span class="text-danger">    ---     </span>
+                @elseif($booking->payment_status === "confirm")
+                    <span class="text-success">{{ $booking->transaction_id }}</span>
+                @endif
+            </td>
+
+            <td>
+                @if($booking->payment_status === "Pending")
+                <span class="text-danger">    ---     </span>
+            @elseif($booking->payment_status === "confirm")
+                <span class="text-success">{{ \Carbon\Carbon::parse($booking->pickupdate)->format('d F, Y \a\t h:i A') }}</span>
+            @endif
+        </td>
+
+
                     <td>
                         @if($booking->status === "canceled")
                             Canceled
