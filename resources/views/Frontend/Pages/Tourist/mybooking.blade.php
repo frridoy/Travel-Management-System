@@ -489,10 +489,12 @@
                     <th>Amount (BDT)</th>
                     <th>Tran-ID</th>
                     <th>Pickupdate</th>
-                    <th>Action</th> <!-- Added Action column -->
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
+
+
                @foreach ($bookings as $key => $booking )
                 <tr>
                     <th scope="row">{{ $key + 1 }}</th>
@@ -550,7 +552,18 @@
                                     <button type="button" onclick="confirmCancellation({{ $booking->id }})" class="btn btn-danger"><i class="fas fa-times"></i></button>
                                 </form>
                             @endif
+
+                            <a href="{{ route('tourist.bookingView', $booking->id) }}" class="btn btn-info">
+
+                                <span style="font-size: 0.7rem;"><i class="fas fa-eye"></i></span>
+
+                            </a>
+
                         @endif
+
+                        {{-- <a href="{{ route('tourist.bookingView', $booking->id) }}" class="btn btn-info">View</a> --}}
+
+
                     </td>
                 </tr>
                @endforeach

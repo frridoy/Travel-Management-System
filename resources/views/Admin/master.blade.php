@@ -355,15 +355,15 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    {{-- <script>
+    <script>
         $(function() {
             setTimeout(() => {
                 $('.loader').fadeOut(30); // Set an extremely quick fade-out time (e.g., 10 milliseconds)
             }, 150); // Adjust the initial delay as needed
         });
-    </script> --}}
+    </script>
 
-    {{-- @stack('yourJsCode') --}}
+    @stack('printreport')
 </body>
 
 </html>

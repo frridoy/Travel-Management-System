@@ -36,12 +36,14 @@
 
 
 </body>
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="/Frontend/assets/js/jquery-3.2.1.min.js"></script>
 <script src="/Frontend/assets/js/popper.min.js"></script>
 <script src="/Frontend/assets/js/bootstrap.min.js"></script>
 <script src="/Frontend/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js"></script>
 <script src="/Frontend//assets/plugins/slider/js/owl.carousel.min.js"></script>
 <script src="/Frontend//assets/js/script.js"></script>
+
+@stack('reportcode')
 
 </html>

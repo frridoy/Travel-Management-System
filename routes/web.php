@@ -87,6 +87,13 @@ Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 
 Route::get('/tourist/booking/{id}',[TouristController::class, 'touristBooking'])->name('tourist.booking');
 Route::post('/cancel-booking/{id}', [TouristController::class, 'cancel'])->name('cancel.booking');
+// Route::get('/tourist/booking-view/{id}',[TouristController::class, 'view'])->name('tourist.bookingView');
+Route::get('/tourist/booking-view/{id}', [TouristController::class, 'view'])->name('tourist.bookingView');
+
+
+//tourist profile
+Route::get('/tourist/profile',[TouristController::class, 'profile'])->name('tourist.profile');
+
 
 
 

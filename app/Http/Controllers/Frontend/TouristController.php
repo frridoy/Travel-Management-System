@@ -98,4 +98,18 @@ class TouristController extends Controller
 
         return back()->with('success', 'Booking canceled successfully.');
     }
+
+
+    public function profile(){
+        $userdata=Booking::where('tourist_id',auth()->user()->id)->get();
+
+        return view('Frontend.Pages.Tourist.profile',compact('userdata'));
+    }
+
+    public function view($id)
+    {
+        $booking=Booking::find($id);
+        return view('Frontend.Pages.Tourist.bookingView',compact('booking'));
+    }
+
 }

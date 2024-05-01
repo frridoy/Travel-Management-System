@@ -90,6 +90,7 @@
                                 @endguest
 
                                 @auth
+                                    <a class="dropdown-item" href="{{ route('tourist.profile') }}">My Profile</a>
                                     <a class="dropdown-item" href="{{ route('tourist.logout') }}">Logout</a>
 
                                     <a class="dropdown-item" href="{{ route('tourist.booking', auth()->user()->id) }}">My Booking</a>
