@@ -183,6 +183,13 @@
                                 <label for="image" class="form-label">Image:</label>
                                 <input type="file" class="form-control" id="image" name="image">
                             </div>
+
+
+                            <div class="mb-3">
+                                <label for="price" class="form-label">Price:</label>
+                                <input type="number" class="form-control" id="price" name="price" value="{{ old('price') }}" required>
+                            </div>
+
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
@@ -207,19 +214,36 @@
                                     @endforeach
                                 </select>
                             </div>
-                            
+
+
+
                             <div class="mb-3">
-                                <label for="price" class="form-label">Price:</label>
-                                <input type="number" class="form-control" id="price" name="price" value="{{ old('price') }}" required>
+                                <label for="breakfast" class="form-label">Breakfast:</label>
+                                <input type="text" class="form-control" id="breakfast" name="breakfast" value="{{ old('breakfast') }}" required>
                             </div>
+
+
+                            <div class="mb-3">
+                                <label for="lunch" class="form-label">Lunch:</label>
+                                <input type="text" class="form-control" id="lunch" name="lunch" value="{{ old('lunch') }}" required>
+                            </div>
+
+
+
+                            <div class="mb-3">
+                                <label for="dinner" class="form-label">Dinner:</label>
+                                <input type="text" class="form-control" id="dinner" name="dinner" value="{{ old('dinner') }}" required>
+                            </div>
+
                             <div class="mb-3">
                                 <label for="spot" class="form-label">Spot:</label>
                                 <input type="text" class="form-control" id="spot" name="spot" value="{{ old('spot') }}" required>
                             </div>
-                            <div class="mb-3">
-                                <label for="description" class="form-label">Description:</label>
-                                <textarea class="form-control" id="description" name="description">{{ old('description') }}</textarea>
-                            </div>
+
+
+
+
+
 
                         </div>
                     </div>
@@ -269,4 +293,6 @@
 </script>
 
 @endsection
+
+
 

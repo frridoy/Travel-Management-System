@@ -15,7 +15,7 @@
 
 <div class="container mt-0">
     <a href="{{ route('package.list') }}" class="btn btn-primary">Package Info</a>
-    <h2 class="text-center mb-4">Package Trash List</h2>
+    <h2 class="text-center mb-4">Package Pause List</h2>
 
     <div class="table-responsive">
         <table class="table table-bordered table-striped">

@@ -2,19 +2,13 @@
 @section('content')
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel List</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-</head>
 <body>
 
-<div class="container mt-0">
+<div class="container mt-0 mb-5">
     <a href="{{ route('hotel.create') }}" class="btn btn-primary">Create</a>
     <a href="{{ route('hotel.trash') }}" class="btn btn-warning">Trash</a>
-    <h2 class="text-center mb-4">Hotel List</h2>
+    <h2 class="text-center mb-4 mt-0">Hotel List</h2>
 
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
@@ -25,8 +19,8 @@
                     <th>Name</th>
                     <th>Type</th>
                     <th>Address</th>
-                    <th>Single(BDT)</th>
-                    <th>Double(BDT)</th>
+                    <th>Single</th>
+                    <th>Double</th>
                     <th>Single Room</th>
                     <th>Double Room</th>
                     <th>Image</th>
@@ -67,7 +61,7 @@
 
                         </a>
                         <a href="{{ route('hotel.edit', $hotel->id) }}" class="btn btn-warning">
-                            <span style="font-size: 0.9rem;"><i class="fas fa-edit"></i></span>
+                            <span style="font-size: 0.7rem;"><i class="fas fa-edit"></i></span>
 
                         </a>
                     </td>
@@ -85,9 +79,7 @@
 </div>
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
 @endsection

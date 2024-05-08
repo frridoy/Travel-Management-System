@@ -11,7 +11,7 @@
                 <th scope="col">Email</th>
                 {{-- <th scope="col">Password</th> --}}
                 <th scope="col">Image</th>
-                <th scope="col">Action</th>
+
             </tr>
         </thead>
         <tbody>
@@ -28,12 +28,6 @@
                     <td>
                         <img style="border-radius: 15%" width="70px"  src="{{ url('/uploads//' . $user->image) }}" alt="">
                     </td>
-                    <td>
-                        {{-- <a href="{{route('package.view',$package->id)}}"class="btn btn-primary">View</a>
-                        <a href="{{route('package.edit',$package->id)}}"class="btn btn-warning">Edit</a>
-                        <a href="{{route('package.delete',$package->id)}}"class="btn btn-danger">Delete</a> --}}
-                        <a href=""class="btn btn-danger">View</a>
-                    </td>
                    </tr>
 @endforeach
         </tbody>
@@ -41,5 +35,5 @@
 
 
         {{ $users->links() }}
-  
+
 @endsection

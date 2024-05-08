@@ -104,18 +104,19 @@
             <div class="right-content mb-5 my-1">
 
                 <p class="card-text"><strong>Pick Up: </strong>{{ date('j M, Y \a\t g:i A', strtotime($singlepackageview->pickupdate)) }} from  {{ $singlepackageview->startingpoint }}.</p>
-
                 <p class="card-text"><strong>Destination:</strong> {{ $singlepackageview->destination }} </p>
                 <p class="card-text"><strong>Duration:</strong> {{ $singlepackageview->duration }}</p>
 
 
 
-                <p class="card-text"><strong> Initial Amount:</strong> {{ $singlepackageview->price }} </p>
-                <p class="card-text"><strong>Description:</strong> {{ $singlepackageview->description }}</p>
+                <p class="card-text"><strong> Amount:</strong> {{ $singlepackageview->price }} </p>
+                <p class="card-text"><strong>Breakfast:</strong> {{ $singlepackageview->breakfast }}</p>
+                <p class="card-text"><strong>Lunch:</strong> {{ $singlepackageview->lunch }}</p>
+                <p class="card-text"><strong>Dinner:</strong> {{ $singlepackageview->dinner }}</p>
                 <p class="card-text"><strong>Hotel Type:</strong> {{ $singlepackageview->hotels->type }} </p>
-                <p class="card-text"><strong>Transport:</strong> {{ $singlepackageview->transports->name }}, {{ $singlepackageview->transports->type }}</p>
+                <p class="card-text"><strong>Transport:</strong>{{ $singlepackageview->transports->type }}</p>
                 <p class="card-text"><strong>Spot Names:</strong> {{ $singlepackageview->spot }}</p>
-                <p class="text-info fs-3"> You will receive information about your transport seat, hotel room and other details via email.</p>
+
 
 
                 <a href="{{ route("reservation.form", $singlepackageview->id) }}">

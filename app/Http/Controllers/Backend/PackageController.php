@@ -34,8 +34,10 @@ class PackageController extends Controller
             'returndate' => 'required|date|after_or_equal:pickupdate',
             'duration' => 'required|string|max:255',
             'price' => 'required|integer|min:1',
+            'breakfast' => 'required',
+            'lunch' => 'required',
+            'dinner' => 'required',
             'spot' => 'required|string|max:255',
-            'description' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'hotel_id' => 'required|exists:hotels,id',
             'transport_id' => 'required|exists:transports,id',
@@ -73,7 +75,9 @@ class PackageController extends Controller
             'returndate' => $request->returndate,
             'price' => $request->price,
             'spot' => $request->spot,
-            'description' => $request->description,
+            'breakfast' => $request->breakfast,
+            'lunch' => $request->lunch,
+            'dinner' => $request->dinner,
             'image' => $path . $filename,
             'hotel_id' => $request->hotel_id,
             'transport_id' => $request->transport_id,
@@ -97,7 +101,7 @@ class PackageController extends Controller
         if ($package) {
             $package->delete();
         }
-        notify()->error('Pacakge Trashed Succesfully');
+        notify()->success('Pacakge Paused Succesfully');
         return redirect()->back();
     }
     public function trash()
@@ -168,7 +172,7 @@ class PackageController extends Controller
                 'returndate' => $request->returndate,
                 'price' => $request->price,
                 'spot' => $request->spot,
-                'description' => $request->description,
+               
 
             ]);
             notify()->success('Package Info Updated Successfully');

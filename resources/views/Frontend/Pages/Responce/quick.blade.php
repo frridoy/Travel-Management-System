@@ -1,12 +1,13 @@
-
- <!DOCTYPE html>
+@extends('Frontend.master')
+@section('content')
+ {{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @section('title', 'Travel Agency Questions')
     <style>
-        body {
+        .container-fqa {
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
             margin: 0;
@@ -17,7 +18,7 @@
             height: 100vh;
         }
 
-        .container {
+        .container-fqa {
             max-width: 800px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -27,7 +28,7 @@
             flex-direction: row;
         }
 
-        .conversation {
+        .conversation-fqa {
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -35,8 +36,8 @@
             overflow-y: auto;
         }
 
-        .question,
-        .answer {
+        .question-fqa,
+        .answer-fqa {
             max-width: 70%;
             margin-bottom: 10px;
             padding: 10px 15px;
@@ -45,30 +46,30 @@
             cursor: pointer; /* Add cursor pointer for questions */
         }
 
-        .question {
+        .question-fqa {
             background-color: #007bff;
             color: #fff;
             align-self: flex-start;
         }
 
-        .answer {
+        .answer-fqa {
             display: none; /* Initially hide the answers */
             background-color: #f0f0f0;
             align-self: flex-end;
         }
     </style>
 </head>
-<body>
-<div class="container">
-    <div class="conversation">
+<body> --}}
+<div class="container-fqa">
+    <div class="conversation-fqa">
         @foreach($questions as $qa)
-            <div class="question" onclick="toggleAnswer(this)">{{ $qa['question'] }}</div>
-            <div class="answer">{{ $qa['answer'] }}</div>
+            <div class="question-fqa" onclick="toggleAnswer(this)">{{ $qa['question'] }}</div>
+            <div class="answer-fqa">{{ $qa['answer'] }}</div>
         @endforeach
     </div>
 </div>
 
-<script>
+{{-- <script>
     function toggleAnswer(question) {
         var answer = question.nextElementSibling;
         if (answer.style.display === "none") {
@@ -77,9 +78,9 @@
             answer.style.display = "none";
         }
     }
-</script>
-</body>
-</html>
+</script> --}}
+
+@endsection
 
 
 

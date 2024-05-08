@@ -212,21 +212,11 @@
 @section('content')
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking List</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
+
 <body>
 <div class="container mt-0">
 
-  {{-- <form action="" class="col-6">
-    <div class="form-group">
-   <input type="search" name="search" placeholder="Enter name or code">
-    </div>
-    <button class="btn btn-success">Search</button>
-  </form> --}}
+
 
     <h2 class="text-center mb-0"> Confirmed Booking List</h2>
 
@@ -238,11 +228,10 @@
                     <th>Package</th>
                     <th>Name</th>
                     <th>Destination</th>
-                    {{-- <th>Email</th>
-                    <th>Address</th> --}}
+
                     <th>Person</th>
-                    <th>Room</th>
-                    <th>Payment</th>
+                    {{-- <th>Room</th> --}}
+                    <th>Payment Status</th>
                     <th>Payment Amount</th>
                     <th>Transaction ID</th>
                     <th>Refund Action</th>
@@ -258,16 +247,15 @@
                     <td>TMS- {{ $booking->code}}</td>
                     <td>{{ $booking->name }}</td>
                     <td>{{ $booking->destination }}</td>
-                    {{-- <td>{{ $booking->email }}</td>
-                    <td>{{ $booking->address }}</td> --}}
+
                     <td>{{ $booking->quantity }}</td>
-                    <td>
+                    {{-- <td>
                         @if($booking->chooseroom === "Single Bed for 2 persons in a room")
                             Single Bed
                         @elseif($booking->chooseroom === "Double Bed for 4 persons in a room")
                             Double Bed
                         @endif
-                    </td>
+                    </td> --}}
                     <td>
                         @if($booking->payment_status === "Pending")
                             <span class="text-danger">Pending</span>
@@ -285,7 +273,7 @@
                         @elseif($booking->status === 'canceled' && $booking->refund_processed)
                             {{ $booking->amount * 0.8 }} BDT
                         @else
-                            -
+                            ---
                         @endif
                     </td>
                     <td>
@@ -318,9 +306,7 @@
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+>
 </body>
 </html>
 @endsection
@@ -336,3 +322,6 @@ function calculateTotalRefund($bookings) {
     return $totalRefund;
 }
 @endphp
+
+
+

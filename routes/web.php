@@ -38,7 +38,13 @@ Route::post('/login',[TouristController::class,'doLogin'])->name('tourist.do.log
 ////tourist logout
 
 Route::group(['middleware'=>'auth'],function(){
+
+
     Route::get('/logout',[TouristController::class, 'logout'])->name('tourist.logout');
+
+    Route::get('/package-view/{id}',[SinglePackageViewController::class, 'packageview'])->name('singlepackage.view');
+
+
 });
 
 
@@ -54,12 +60,12 @@ Route::get('/contact-us',[ContactUsController::class,'contactus'])->name('contac
 Route::get('/about-us',[AboutUsController::class,'aboutus'])->name('about.us');
 
 //search the package
-Route::get('package/search',[SearchController::class, 'search'])->name('package.search');
+Route::get('/package/search',[SearchController::class, 'search'])->name('package.search');
 
 
 //single package view
 
-Route::get('/package-view/{id}',[SinglePackageViewController::class, 'packageview'])->name('singlepackage.view');
+// Route::get('/package-view/{id}',[SinglePackageViewController::class, 'packageview'])->name('singlepackage.view');
 
 //reservation form for booking
 
@@ -89,6 +95,8 @@ Route::get('/tourist/booking/{id}',[TouristController::class, 'touristBooking'])
 Route::post('/cancel-booking/{id}', [TouristController::class, 'cancel'])->name('cancel.booking');
 // Route::get('/tourist/booking-view/{id}',[TouristController::class, 'view'])->name('tourist.bookingView');
 Route::get('/tourist/booking-view/{id}', [TouristController::class, 'view'])->name('tourist.bookingView');
+// Route::post('/bookings/rate/{id}', [TouristController::class, 'rateBooking'])->name('rate.booking');
+
 
 
 //tourist profile
@@ -109,6 +117,8 @@ Route::post('/login/store', [UserController::class, 'loginPost'])->name('admin.l
 
 Route::group(['middleware' => 'auth'], function () {
 Route::group(['middleware'=>'CheckAdmin'], function(){
+
+
 
 
 //below all routes if I want to visit I have to login first
@@ -138,7 +148,7 @@ Route::post('/hotel/update/{id}',[HotelController::class,'update'])->name('hotel
 Route::get('/package/create',[PackageController::class,'create'])->name('package.create');
 Route::post('/package/store',[PackageController::class,'store'])->name('package.store');
 Route::get('/package/list',[PackageController::class,'list'])->name('package.list');
-Route::get('/package/delete/{id}',[PackageController::class,'delete'])->name('package.delete');
+Route::get('/package/pause/{id}',[PackageController::class,'delete'])->name('package.delete');
 Route::get('/package/trash',[PackageController::class,'trash'])->name('package.trash');
 Route::get('/package/restore/{id}',[PackageController::class,'restore'])->name('package.restore');
 Route::get('/package/force-delete/{id}',[PackageController::class,'forceDelete'])->name('package.forceDelete');
@@ -190,11 +200,15 @@ Route::get('/package/bookings/pending-list',[BookingController::class, 'pendingL
 
 //admin booking search
 
-Route::get('/tourist/booking/search',[BookingController::class, 'search'])->name('bookings.search');
+Route::get('/tourist/bookings/search',[BookingController::class, 'search'])->name('bookings.search');
 
 });
 });
 });
+
+
+
+
 
 
 

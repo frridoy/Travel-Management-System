@@ -7,6 +7,7 @@ use App\Models\Booking;
 use App\Models\Package;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class TouristController extends Controller
@@ -73,12 +74,30 @@ class TouristController extends Controller
         return redirect()->route('home');
     }
 
-    //my booking
+    // //my booking
+    // public function touristBooking($id)
+    // {
+    //     $bookings=Booking::where('tourist_id', $id)->get();
+    //     return view('Frontend.Pages.Tourist.mybooking', compact('bookings'));
+    // }
+
+
     public function touristBooking($id)
     {
-        $bookings=Booking::where('tourist_id', $id)->get();
+
+        $user = Auth::user();
+
+        if ($user->id != $id) {
+
+            return abort(403, 'Unauthorized to view this booking.');
+        }
+        $bookings = Booking::where('tourist_id', $id)->get();
+
         return view('Frontend.Pages.Tourist.mybooking', compact('bookings'));
     }
+
+
+
 
 
     public function cancel($id)
@@ -112,4 +131,8 @@ class TouristController extends Controller
         return view('Frontend.Pages.Tourist.bookingView',compact('booking'));
     }
 
+
 }
+
+
+

@@ -89,6 +89,7 @@ class SinglePackageViewController extends Controller
             'code' => $request->id,
             'destination' => $request->destination,
             'pickupdate' => $request->pickupdate,
+            'startingpoint' => $request->startingpoint,
         ]);
 
 

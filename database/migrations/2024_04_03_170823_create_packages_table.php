@@ -19,8 +19,10 @@ return new class extends Migration
             $table->string('duration');
             $table->dateTime('returndate');
             $table->string('price');
+            $table->string('breakfast');
+            $table->string('lunch');
+            $table->string('dinner');
             $table->string('spot');
-            $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->unsignedBigInteger('hotel_id');
             $table->foreign('hotel_id')->references('id')->on('hotels')->onDelete('cascade');

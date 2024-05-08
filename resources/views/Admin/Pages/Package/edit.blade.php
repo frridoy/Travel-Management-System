@@ -43,7 +43,7 @@
                         value="{{ $package->duration }}" readonly>
                     </div>
 
-                   
+
                     <div class="mb-3">
                         <label for="price" class="form-label">Price:</label>
                         <input type="number" class="form-control" id="price" name="price"value="{{ $package->price }}"
@@ -54,11 +54,7 @@
                         <input type="text" class="form-control" id="spot" name="spot" value="{{ $package->spot }}"
                             required>
                     </div>
-                    <div class="mb-3">
-                        <label for="description" class="form-label">Description:</label>
-                        <textarea class="form-control" id="description"
-                            name="description"value="{{ $package->description }}"></textarea>
-                    </div>
+                   
                     <div class="mb-3">
                         <label for="image" class="form-label">Image:</label>
                         <input type="file" class="form-control" id="image" name="image">

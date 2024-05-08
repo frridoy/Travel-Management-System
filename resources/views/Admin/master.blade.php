@@ -275,36 +275,36 @@
     {{-- footer starts from here --}}
     <footer class="bg-dark flex-grow-0  text-center text-white w-100">
         <!-- Grid container -->
-        <div class="container p-4 pb-0">
+        {{-- <div class="container p-4 pb-0">
             <!-- Section: Social media -->
             <section class="mb-4">
                 <!-- Facebook -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/akikhossain.abid"
+                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/shahriarsd"
                     role="button"><i class="fab fa-facebook-f"></i></a>
 
                 <!-- Twitter -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/AKHS87" role="button"><i
+                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/shahriarsd" role="button"><i
                         class="fab fa-twitter"></i></a>
 
                 <!-- Instagram -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/akikwho/"
+                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/shahriarsd"
                     role="button"><i class="fab fa-instagram"></i></a>
 
                 <!-- Linkedin -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/akikhossain/"
+                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/shahriarsd"
                     role="button"><i class="fab fa-linkedin-in"></i></a>
 
                 <!-- Github -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/akikhossain" role="button"><i
+                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/shahriarsd" role="button"><i
                         class="fab fa-github"></i></a>
             </section>
-        </div>
+        </div> --}}
         <!-- Grid container -->
 
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)" ;>
             Copyright © All Rights Reserved 2024 | Travel Management System |
-            <a class="text-white" href="https://github.com/akikhossain">Akik Hossain</a>
+            <a class="text-white" href="https://github.com/shahriarsd">MD Shahriar Kabir</a>
         </div>
     </footer>
 
@@ -367,3 +367,6 @@
 </body>
 
 </html>
+
+
+

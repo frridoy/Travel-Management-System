@@ -31,6 +31,7 @@ return new class extends Migration
             $table->decimal('final_amount', 10, 2)->nullable(); // Add final_amount column
             $table->string('destination');
             $table->string('pickupdate');
+            $table->string('startingpoint');
             $table->timestamps();
             $table->softDeletes();
         });

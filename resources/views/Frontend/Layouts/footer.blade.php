@@ -69,7 +69,7 @@
         </div>
     </div>
 </footer> --}}
-
+{{--
 <div class="copy">
     <div class="container">
         <a href="https://www.smarteyeapps.com/">2024 &copy; All Rights Reserved | Travel Management System | Md. Shahriar Kabir</a>
@@ -83,4 +83,4 @@
     </span>
     </div>
 
-</div>
+</div> --}}

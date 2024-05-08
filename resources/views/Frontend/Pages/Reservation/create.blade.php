@@ -100,6 +100,7 @@
                                 <input type="hidden" name="id" value="{{$singlepackageview->id}}">
                                 <input type="hidden" name="destination" value="{{$singlepackageview->destination}}">
                                 <input type="hidden" name="pickupdate" value="{{$singlepackageview->pickupdate}}">
+                                <input type="hidden" name="startingpoint" value="{{$singlepackageview->startingpoint}}">
 
 
 

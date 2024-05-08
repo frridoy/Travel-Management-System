@@ -14,7 +14,7 @@
 
 <div class="container mt-0">
     <a href="{{ route('package.create') }}" class="btn btn-primary">Create Package</a>
-    <a href="{{ route('package.trash') }}" class="btn btn-warning">Trash Packages</a>
+    <a href="{{ route('package.trash') }}" class="btn btn-warning">Pause Package</a>
     <h2 class="text-center mb-4">Package List</h2>
 
     <div class="table-responsive">
@@ -24,8 +24,8 @@
                     <th>#</th>
                     <th>Code</th>
                     <th>Package</th>
-                    <th>Pick</th>
-                    <th>Return</th>
+                    <th>Pick Up Date</th>
+                    <th>Return Rate</th>
                     <th>Duration</th>
                     <th>Price/p</th>
                     <th>Hotel</th>
@@ -43,6 +43,11 @@
                     <td>{{ date('d M,Y \a\t g:iA', strtotime($package->pickupdate)) }}</td>
                     <td>{{ date('d M,Y \a\t g:iA', strtotime($package->returndate)) }}</td>
                     <td>{{ $package->duration }}</td>
+
+
+
+
+
                     <td>{{ $package->price }}.00 BDT</td>
                     <td>{{ optional($package->hotels)->id }}. {{ optional($package->hotels)->name }} </td>
 
